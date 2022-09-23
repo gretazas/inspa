@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid row h-100">
+
+    <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
+        <div class="d-flex align-items-center justify-content-center" id="circle-outer">
+            <div id="circle-inner"></div>
+        </div>
+    </div>
+
+    <div class="col-md-5 mb-4 mt-3">
+        <h4>Inspas</h4>
+        <div class="card d-block " id="posts">
+            {% load crispy_forms_tags %}
+            {% csrf_token %}
+            {% for post in post_list %}
+            <div class="row">
+                <div class="card body g-0">
+                    <!-- Post content lies here-->
+                    <p class="card-text ">
+                        {{ post.content | safe }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Types of the diff tips -->
+        <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
+            <h4>Tips of the day</h4>
+            <ul>
+                <li><a href="">Health</a></li>
+                <li><a href="">Wealth</a></li>
+                <li><a href="">Exercise</a></li>
+                <li><a href="">Mindfulness</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
