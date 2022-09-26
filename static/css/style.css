@@ -1,3 +1,5 @@
+/* Main base,html settings */
+
 * { padding: 0; 
     margin: 0; }
 
@@ -9,6 +11,7 @@ main {
     height: 90%;
 }
 
+/* Green Inspa circle at the background settings */
 #circle-outer {
     background-color: rgba(171, 196, 171, 0.5);
     height:270px;
@@ -23,6 +26,7 @@ main {
     border-radius:50%;
 }
 
+/* Links of tip types settings */
 #tip_types {
     padding: 20px;
     height: 25%!important;
@@ -32,40 +36,61 @@ main {
     padding: 5px;
 }
 
+/* Navigaton */
 nav {
     margin-left: 30px;
 }
 
+/* Posts */
 #posts {
     height: 65%!important;
 }
 
-#circle-outer1 {
+#post{
+    margin: 0;
+}
+
+#author{
+    margin-right: 0;
+}
+
+
+/* Css at login.html */
+
+/* Green Inspa circle at the background settings */
+#circle-outerSignIn {
     background-color: rgba(171, 196, 171, 0.5);
     height:400px;
     width:400px;
     border-radius: 50%
 }
 
-#circle-inner1 {
+#circle-innerSignIn {
     background-color:rgb(171, 196, 171);
     height: 350px;
     width: 350px;
     border-radius:50%;
 }
 
+/* Sign in css settings*/
 #signin div {
     justify-content: space-around;
-
 }
 
 #signin {
     padding: 30px;
 }
 
+/* Information about club */
 #about_us {
     height: 55%!important;
     padding: 30px 20px;
+}
+
+/* Feedback form */
+#feedback {
+    padding: 20px;
+    height: 35%!important;
 }
 
 textarea {
@@ -76,7 +101,20 @@ button {
     margin: 5px;
 }
 
-#feedback {
-    padding: 20px;
-    height: 35%!important;
+
+/* Sign up css settings*/
+
+
+#circle-outerSignUp {
+    background-color: rgba(171, 196, 171, 0.5);
+    height:530px;
+    width:530px;
+    border-radius: 50%
+}
+
+#circle-innerSignUp {
+    background-color:rgb(171, 196, 171);
+    height: 490px;
+    width: 490px;
+    border-radius:50%;
 }

@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://inspasite.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['inspasite.herokuapp.com', 'localhost']
 CSRF_TRUSTED_ORIGINS = ['https://8000-gretazas-inspa-stze9rw27qr.ws-eu67.gitpod.io', 'http://127.0.0.1:8000/']
 PAPERLESS_CSRF_TRUSTED_ORIGINS = 'http://127.0.0.1:8000/'
 ACCOUNT_EMAIL_VARIFICATION = 'none'

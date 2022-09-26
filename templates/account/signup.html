@@ -1,21 +1,68 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<div class="container-fluid row h-100">
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+  <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
+    <div class="d-flex align-items-center justify-content-center" id="circle-outerSignUp">
+      <div id="circle-innerSignUp">
+        <div class="container" id="signin">
+          <div class="row">
+            <div class="col-md-6 mx-auto mt-3">
+              <h3>{% trans "Sign Up" %}</h3>
+              <span>{% blocktrans %}Already have an account? <br> Then please <a href="{{ login_url }}">
+                sign in</a>.{% endblocktrans %}</span>
+            </div>
 
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  {% if redirect_field_value %}
+                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                  {% endif %}
+                  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5 mb-4 mt-3">
+    <h4>About Us</h4>
+    <div class="card" id="about_us">
+      <p>
+        Our Youth club first time opened in 2003.
+        We started to work with young local kids in order to help to cope with anxiety and day-to-day issues.
+        Here you could share your emotions and tips on how to cope with unwanted feelings.
+        In 2005 we opened another youth club in Galway. And day after day we grew stronger.
+      </p>
+    </div>
+
+
+
+
+    <!-- Feedback form -->
+    <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="feedback">
+      <h4>Feedback Form</h4>
+      <form>
+        <textarea class="form-control" type="text" placeholder="Share your feedback here please"></textarea>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 {% endblock %}

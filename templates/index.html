@@ -16,12 +16,13 @@
             {% load crispy_forms_tags %}
             {% csrf_token %}
             {% for post in post_list %}
-            <div class="row">
+            <div class="row" id="post">
                 <div class="card body g-0">
                     <!-- Post content lies here-->
                     <p class="card-text ">
                         {{ post.content | safe }}
                     </p>
+                    <p id="author">{{ post.author }}</p>
                 </div>
             </div>
             {% endfor %}
