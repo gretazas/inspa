@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+<div class="container-fluid row h-100">
+
+    <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
+        <div class="d-flex align-items-center justify-content-center" id="circle-outerContact">
+            <div id="circle-innerContact">
+                <div class="container" id="contact">
+                    <div class="row">
+                        <div class="col-md-8 mt-3">
+                            <h3>Opening Hours</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 mt-3">
+                            <span>Mon - Thur 9:30 - 13:00</span><br>
+                            <span>Thur - Fri 10:00 - 13:30</span><br>
+                            <span>Sun Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5 mb-4 mt-3">
+        <h4>Contact Us</h4>
+        <div class="card" id="addresses">
+            <div class="row row-cols-2">
+                <span>
+                    <h6>Phone number: </h6>098343234235
+                </span>
+                <span>
+                    <h6>Email address: </h6>youthclub@yahoo.com
+                </span>
+            </div>
+            <span>
+                <h6>Addresses: </h6>
+                23 House Name,<br>
+                Bishop Road, <br>
+                Co. Galway<br>
+                <hr>
+                26 House Name,<br>
+                Bishop Street, <br>
+                Co Lthrum<br>
+                <hr>
+                1 House Name,<br>
+                Eglinton Road, <br>
+                Dublin<br>
+            </span>
+
+        </div>
+
+        <!-- Map -->
+        <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="map">
+            <h4>Map</h4>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

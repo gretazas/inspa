@@ -14,15 +14,15 @@ main {
 /* Green Inspa circle at the background settings */
 #circle-outer {
     background-color: rgba(171, 196, 171, 0.5);
-    height:270px;
-    width:270px;
+    height:300px;
+    width:300px;
     border-radius: 50%
 }
 
 #circle-inner {
     background-color:rgb(171, 196, 171);
-    height: 250px;
-    width: 250px;
+    height: 270px;
+    width: 270px;
     border-radius:50%;
 }
 
@@ -118,3 +118,44 @@ button {
     width: 490px;
     border-radius:50%;
 }
+
+#signup div {
+    justify-content: space-around;
+}
+
+#signup {
+    padding: 30px;
+}
+
+/* Contact.html css settings */
+
+
+/* Opening hours */
+#circle-outerContact {
+    background-color: rgba(171, 196, 171, 0.5);
+    height:520px;
+    width:520px;
+    border-radius: 50%
+}
+
+#circle-innerContact {
+    background-color:rgb(171, 196, 171);
+    height: 485px;
+    width: 485px;
+    border-radius:50%;
+}
+
+#addresses {
+    height: 60%!important;
+    padding-left: 10px;
+}
+
+#contact {
+    margin: 40px;
+    padding: 90px;
+}
+
+#addresses h6 {
+    padding-top: 20px;
+}
+
