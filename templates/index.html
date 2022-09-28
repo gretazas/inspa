@@ -19,10 +19,11 @@
             <div class="row" id="post">
                 <div class="card body g-0">
                     <!-- Post content lies here-->
-                    <p class="card-text ">
+                    <a href="{% url 'post_detail' %}"><p class="card-text ">
                         {{ post.content | safe }}
                     </p>
                     <p id="author">{{ post.author }}</p>
+                </a>
                 </div>
             </div>
             {% endfor %}
@@ -32,10 +33,10 @@
         <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
             <h4>Tips of the day</h4>
             <ul>
-                <li><a href="">Health</a></li>
-                <li><a href="">Wealth</a></li>
-                <li><a href="">Exercise</a></li>
-                <li><a href="">Mindfulness</a></li>
+            <li><a href="{% url 'health' %}">Health</a></li>
+                <li><a href="{% url 'wealth' %}">Wealth</a></li>
+                <li><a href="{% url 'exercise' %}">Exercise</a></li>
+                <li><a href="{% url 'mindfulness' %}">Mindfulness</a></li>
             </ul>
         </div>
     </div>
