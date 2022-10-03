@@ -24,9 +24,12 @@ urlpatterns = [
     path('',  include('insite.urls')),
     path('accounts/', include('allauth.urls')),
     path('contact/', views.contact, name='contact'),
-    path('post_detail/', views.PostDetail, name='post_detail'),
+    path('', views.homePage.as_view(), name="home"),
+    path('posts/', views.AllPostsList.as_view(), name='posts'),
     path('exercise/', views.exercise, name='exercise'),
     path('health/', views.health, name='health'),
     path('mindfulness/', views.mindfulness, name='mindfulness'),
     path('wealth/', views.wealth, name='wealth'),
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
 ]

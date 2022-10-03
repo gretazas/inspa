@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container-fluid d-flex row">
+    <h4>Inspas</h4>
+    <div class="posts">
+        {% csrf_token %}
+        <div class="row">
+            {% for post in post_list %}<div id="announcement">
+            <!-- Post content lies here-->
+            <div class="card" class="post">
+                <p class="card-text">
+                    {{ post.content | safe }}
+                </p>
+                <p id="authorInPosts">
+                    {{ post.author }}
+                </p>
+            </div>
+            
+                <div class="row">
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <!-- The number of likes -->
+                            <span class="text-secondary">{{ post.number_of_likes }} </span>
+                        </strong>
+                    </div>
+                    <div class="col-1">
+                        {% if user.is_authenticated %}
+                        <button class="addcomment">
+                            <a href="{% url 'post_detail' post.slug %}">Comments</a>
+                        </button>
+                        {% else %}
+                            <button class="addcomment">
+                                Comments
+                            </button>
+            </div>
+                        {% endif %}
+                        
+                    </div>
+                    <hr>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

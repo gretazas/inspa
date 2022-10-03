@@ -14,16 +14,21 @@ main {
 /* Green Inspa circle at the background settings */
 #circle-outer {
     background-color: rgba(171, 196, 171, 0.5);
-    height:300px;
-    width:300px;
-    border-radius: 50%
+    height:400px;
+    width:400px;
+    border-radius: 50%;
+    overflow: auto;
+
 }
 
 #circle-inner {
     background-color:rgb(171, 196, 171);
-    height: 270px;
-    width: 270px;
+    height: 370px;
+    width: 370px;
     border-radius:50%;
+    display: grid;
+    place-items: center;
+    overflow: auto;
 }
 
 /* Links of tip types settings */
@@ -42,24 +47,24 @@ nav {
 }
 
 /* Posts */
-#posts {
+.posts {
     height: 65%!important;
 }
 
-#post {
+.post {
     margin: 0;
 }
 
-
-#post p {
+.post p {
+    font-family: 'Gothic A1', sans-serif;
     padding: 0px 15px;
 }
 
 #author{
     display: flex;
     justify-content: end;
+    padding-right: 10px;
 }
-
 
 /* Css at login.html */
 
@@ -165,3 +170,35 @@ button {
     padding-top: 20px;
 }
 
+/* Random post only if logged in */
+
+#random_post {
+    padding: 15px;
+}
+
+form button {
+    border: none;
+    margin: 5px;
+}
+
+.addcomment {
+    border-radius: 25px;
+    border: solid black 1px;
+    padding: 0 5px;
+    font-size: small;
+}
+
+.addcomment a {
+    text-decoration: none;
+    color: grey;
+}
+
+/* Css in Posts */
+
+
+#authorInPosts {
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+    margin-bottom: 0px;
+}

@@ -6,24 +6,37 @@
 
     <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
         <div class="d-flex align-items-center justify-content-center" id="circle-outer">
-            <div id="circle-inner"></div>
+            <div id="circle-inner">
+                {% if user.is_authenticated %}
+                {% load crispy_forms_tags %}
+                {% csrf_token %}
+                <a href="{% url 'posts' %}">
+                    <p id="random_post">
+                        {{ random_post | safe }}
+                    </p>
+                </a>
+            {% endif %}
+            </div>
         </div>
     </div>
 
     <div class="col-md-5 mb-4 mt-3">
         <h4>Inspas</h4>
-        <div class="card d-block " id="posts">
+        <div class="card d-block " class="posts">
             {% load crispy_forms_tags %}
             {% csrf_token %}
             {% for post in post_list %}
-            <div class="row" id="post">
+            <div class="row" class="post">
                 <div class="card body g-0">
                     <!-- Post content lies here-->
-                    <a href="{% url 'post_detail' %}"><p class="card-text ">
-                        {{ post.content | safe }}
-                    </p>
-                    <p id="author">{{ post.author }}</p>
-                </a>
+                    <a href="{% url 'posts' %}">
+                        <p class="card-text ">
+                            {{ post.content | safe }}
+                        </p>
+                        <p id="author">
+                            {{ post.author }}
+                        </p>
+                    </a>
                 </div>
             </div>
             {% endfor %}
