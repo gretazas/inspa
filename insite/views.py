@@ -20,16 +20,44 @@ class HomePage(generic.ListView):
         context = super(HomePage, self).get_context_data(**kwargs)
         context['random_post'] = self.random_post
 
-        if sys.getsizeof(self.random_post) < 48.5:
+        if sys.getsizeof(self.random_post) < 48.4:
             return context
         else:
             return HomePage()
 
-class AllPostsList(generic.ListView):
+class PostsList(generic.ListView):
     ''' Posts in posts.html'''
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "posts.html"
+
+
+class HealthPostsList(generic.ListView):
+    ''' Posts in health.html'''
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = "tips_of_the_day/health.html"
+
+
+class ExercisePostsList(generic.ListView):
+    ''' Posts in exercise.html'''
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = "tips_of_the_day/exercise.html"
+
+
+class MindfulnessPostsList(generic.ListView):
+    ''' Posts in mindfulness.html'''
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = "tips_of_the_day/mindfulness.html"
+
+
+class WealthPostsList(generic.ListView):
+    ''' Posts in wealth.html'''
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = "tips_of_the_day/wealth.html"
 
 
 class PostDetail(View):
@@ -104,23 +132,3 @@ class PostLike(View):
 def contact(request):
     ''' Render contact.html '''
     return render(request, "contact.html")
-
-
-def exercise(request):
-    ''' Render tips_of_the_day/exercise.html '''
-    return render(request, "tips_of_the_day/exercise.html")
-
-
-def health(request):
-    ''' Render tips_of_the_day/health.html '''
-    return render(request, "tips_of_the_day/health.html")
-
-
-def mindfulness(request):
-    ''' Render tips_of_the_day/mindfulness.htm '''
-    return render(request, "tips_of_the_day/mindfulness.html")
-
-
-def wealth(request):
-    ''' Render tips_of_the_day/wealth.html '''
-    return render(request, "tips_of_the_day/wealth.html")

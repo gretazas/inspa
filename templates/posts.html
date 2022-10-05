@@ -2,7 +2,9 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="container-fluid d-flex row">
-    <h4>Inspas</h4>
+    <div class="d-flex row justify-content-md-center">
+        <h4>Inspas</h4><button id="addposts">Add Post</button>
+    </div>
     <div class="posts">
         {% csrf_token %}
         <div class="row">
@@ -40,7 +42,7 @@
                     </div>
                     <div class="col-1">
                         {% if user.is_authenticated %}
-                        <button class="addcomment">
+                        <button id="addcomment">
                             <a href="{% url 'post_detail' post.slug %}">Comments</a>
                         </button>
                         {% else %}
