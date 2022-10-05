@@ -1,34 +1,42 @@
-from django.shortcuts import render, get_object_or_404, reverse
-from .models import Post
-from django.views import generic, View
-from .forms import CommentForm
-from django.http import HttpResponseRedirect
 import random
+from django.shortcuts import render, get_object_or_404, reverse
+from django.views import generic, View
+from django.http import HttpResponseRedirect
+from .forms import CommentForm
+from .models import Post
+import sys
 
 
-class homePage(generic.ListView):
+class HomePage(generic.ListView):
+    ''' Render home page'''
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "index.html"
+    posts = list(Post.objects.filter(status=1))
+    random_post = random.choice(posts)
 
+    def get_context_data(self, **kwargs):
+        ''' Ger random post if size not bigger than 200 char'''
+        context = super(HomePage, self).get_context_data(**kwargs)
+        context['random_post'] = self.random_post
+
+        if sys.getsizeof(self.random_post) < 48.5:
+            return context
+        else:
+            return HomePage()
 
 class AllPostsList(generic.ListView):
+    ''' Posts in posts.html'''
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "posts.html"
 
 
-# def random_post(request):
-#     post_ids = Post.objects.all().values_list('slug', flat=True) 
-#     random_obj = Post.objects.get(post_id=random.choice(post_ids))
-#     context = {
-#         'random_post': random_obj,
-#         }
-#     return render(request, 'index.html', context)
-
 class PostDetail(View):
+    ''' Post related views'''
 
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, slug):
+        ''' Render separate post using slug in url '''
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -48,8 +56,8 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
-
+    def post(self, request, slug):
+        ''' Comments attached to posts '''
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -81,8 +89,9 @@ class PostDetail(View):
 
 
 class PostLike(View):
-    
-    def post(self, request, slug, *args, **kwargs):
+    ''' Post and functions related with like views '''
+    def post(self, request, slug):
+        ''' Function: toggle between liked and unliked '''
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
@@ -92,22 +101,26 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-
 def contact(request):
+    ''' Render contact.html '''
     return render(request, "contact.html")
 
 
 def exercise(request):
+    ''' Render tips_of_the_day/exercise.html '''
     return render(request, "tips_of_the_day/exercise.html")
 
 
 def health(request):
+    ''' Render tips_of_the_day/health.html '''
     return render(request, "tips_of_the_day/health.html")
 
 
 def mindfulness(request):
+    ''' Render tips_of_the_day/mindfulness.htm '''
     return render(request, "tips_of_the_day/mindfulness.html")
 
 
 def wealth(request):
+    ''' Render tips_of_the_day/wealth.html '''
     return render(request, "tips_of_the_day/wealth.html")

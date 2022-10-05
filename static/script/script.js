@@ -23,3 +23,9 @@ button.addEventListener('click', (event) => {
   `
    
 })
+
+// let random_post = document.getElementById('random_post')
+
+// if (random_post.length > 200){
+//   document.getElementById('circle-inner').style.width = '500px';
+// }

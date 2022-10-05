@@ -1,7 +1,10 @@
 /* Main base,html settings */
 
-* { padding: 0; 
-    margin: 0; }
+* { 
+    font-family: 'Gothic A1', sans-serif;
+    padding: 0; 
+    margin: 0; 
+}
 
 html, body {
     height: 100%;
@@ -49,17 +52,28 @@ nav {
 /* Posts */
 .posts {
     height: 65%!important;
+    overflow-y: scroll;
 }
 
 .post {
     margin: 0;
+    text-decoration: none;
 }
 
 .post p {
-    font-family: 'Gothic A1', sans-serif;
     padding: 0px 15px;
 }
 
+.post a {
+    color: black;
+}
+
+/* Links to tip pages */
+#tip_types a {
+    text-decoration: none;
+}
+
+/* Author of the post */
 #author{
     display: flex;
     justify-content: end;
@@ -68,7 +82,7 @@ nav {
 
 /* Css at login.html */
 
-/* Green Inspa circle at the background settings */
+/* Green Inspa circles at the background settings */
 #circle-outerSignIn {
     background-color: rgba(171, 196, 171, 0.5);
     height:400px;
@@ -83,13 +97,23 @@ nav {
     border-radius:50%;
 }
 
-/* Sign in css settings*/
+/* Signin css settings*/
 #signin div {
     justify-content: space-around;
 }
 
 #signin {
     padding: 30px;
+}
+
+#signin h3 {
+    text-align: center;
+}
+
+/* Signin button */
+#signInbtn {
+    border: 1px solid grey;
+    border-radius: 25px;
 }
 
 /* Information about club */
@@ -112,24 +136,24 @@ button {
     margin: 5px;
 }
 
+/* Signup css settings*/
 
-/* Sign up css settings*/
-
-
+/* Green Inspa circles at the background settings */
 #circle-outerSignUp {
     background-color: rgba(171, 196, 171, 0.5);
-    height:530px;
-    width:530px;
+    height:600px;
+    width:600px;
     border-radius: 50%
 }
 
 #circle-innerSignUp {
     background-color:rgb(171, 196, 171);
-    height: 490px;
-    width: 490px;
+    height: 560px;
+    width: 560px;
     border-radius:50%;
 }
 
+/* Signup css settings*/
 #signup div {
     justify-content: space-around;
 }
@@ -138,10 +162,14 @@ button {
     padding: 30px;
 }
 
+#signup h3 {
+    margin-left: 20%;
+}
+
 /* Contact.html css settings */
 
 
-/* Opening hours */
+/* Green Inspa circles/ Opening hours */
 #circle-outerContact {
     background-color: rgba(171, 196, 171, 0.5);
     height:520px;
@@ -181,6 +209,7 @@ form button {
     margin: 5px;
 }
 
+/* Add commets css settings */
 .addcomment {
     border-radius: 25px;
     border: solid black 1px;
@@ -195,10 +224,31 @@ form button {
 
 /* Css in Posts */
 
-
+/* Style username at the end of the post  */
 #authorInPosts {
     display: flex;
     justify-content: end;
     padding-right: 10px;
     margin-bottom: 0px;
+}
+
+/* Footer */
+
+.fa-facebook-square:hover {
+    color: #4267B2;
+}
+
+.fa-twitter-square:hover {
+    color: #1DA1F2;
+}
+
+.fa-instagram-square:hover {
+    background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.fa-youtube-square:hover {
+    color: #FF0000;
 }

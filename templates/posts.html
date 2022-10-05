@@ -6,7 +6,7 @@
     <div class="posts">
         {% csrf_token %}
         <div class="row">
-            {% for post in post_list %}<div id="announcement">
+            {% for post in post_list %}
             <!-- Post content lies here-->
             <div class="card" class="post">
                 <p class="card-text">
@@ -44,10 +44,11 @@
                             <a href="{% url 'post_detail' post.slug %}">Comments</a>
                         </button>
                         {% else %}
+                        <div id="announcement">
                             <button class="addcomment">
                                 Comments
                             </button>
-            </div>
+                        </div>
                         {% endif %}
                         
                     </div>

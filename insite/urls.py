@@ -1,10 +1,9 @@
-from . import views
 from django.urls import path
 from insite import views
 
 
 urlpatterns = [
-    path('', views.homePage.as_view(), name="home"),
+    path('', views.HomePage.as_view(), name="home"),
     path('posts/', views.AllPostsList.as_view(), name='posts'),
     path('contact/', views.contact, name='conatct'),
     path('exercise/', views.exercise, name='exercise'),
