@@ -3,9 +3,12 @@
 // });
 
 
-const button = document.getElementById('announcement');
-button.addEventListener('click', (event) => {
-    announcement = document.getElementById('announcement');
+const buttons = document.querySelectorAll('[data-slug]');
+
+buttons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    announcement = document.getElementById('posts');
+    
     announcement.innerHTML = `
     <div class="col-md-4 card mb-4 mt-3">
       <div class="card-body">
@@ -21,11 +24,33 @@ button.addEventListener('click', (event) => {
       </div>
     </div>  
   `
-   
+  announcement.style.display = "flex"
+  announcement.style.justifyContent = "center"
+})
 })
 
-// let random_post = document.getElementById('random_post')
+const healthbuttons = document.querySelectorAll('[healthdata-slug]');
 
-// if (random_post.length > 200){
-//   document.getElementById('circle-inner').style.width = '500px';
-// }
+healthbuttons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    healthannouncement = document.getElementById('healthposts');
+    
+    healthannouncement.innerHTML = `
+    <div class="col-md-4 card mb-4 mt-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div class="alert alert-primary" role="alert">
+            <h4 class="alert-heading">Sorry to announce, but...</h4>
+            <p>You must login to view comments</p>
+                <a href="/posts">
+                  Back to posts
+                </a>
+          </div>
+        </div>
+      </div>
+    </div>  
+  `
+  healthannouncement.style.display = "flex"
+  healthannouncement.style.justifyContent = "center"
+})
+})

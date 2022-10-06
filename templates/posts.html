@@ -2,10 +2,11 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="container-fluid d-flex row">
-    <div class="d-flex row justify-content-md-center">
-        <h4>Inspas</h4><button id="addposts">Add Post</button>
+        <h4>Inspas</h4>
+    <div  class="d-flex justify-content-md-center">
+        <button class="addposts">Add Post</button>
     </div>
-    <div class="posts">
+    <div id="posts" class="posts">
         {% csrf_token %}
         <div class="row">
             {% for post in post_list %}
@@ -14,7 +15,7 @@
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
-                <p id="authorInPosts">
+                <p class="authorInPosts">
                     {{ post.author }}
                 </p>
             </div>
@@ -40,24 +41,22 @@
                             <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
-                    <div class="col-1">
+                    <div class="col-11">
                         {% if user.is_authenticated %}
-                        <button id="addcomment">
+                        <button class="addcomment">
                             <a href="{% url 'post_detail' post.slug %}">Comments</a>
                         </button>
                         {% else %}
-                        <div id="announcement">
-                            <button class="addcomment">
+                        <div class="announcement">
+                            <button class="announcebtnaddcomment" data-slug="{{ post.slug }}">
                                 Comments
                             </button>
                         </div>
                         {% endif %}
                         
                     </div>
-                    <hr>
-                {% endfor %}
-                
-            </div>
+                </div>
+            {% endfor %} 
         </div>
     </div>
 </div>

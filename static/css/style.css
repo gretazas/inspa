@@ -210,14 +210,15 @@ form button {
 }
 
 /* Add commets css settings */
-#addcomment {
+.addcomment {
     border-radius: 25px;
     border: solid black 1px;
     padding: 0 5px;
+    margin: 5px;
     font-size: small;
 }
 
-#addcomment a {
+.addcomment a {
     text-decoration: none;
     color: grey;
 }
@@ -225,21 +226,20 @@ form button {
 /* Css in Posts */
 
 /* Style username at the end of the post  */
-#addposts {
+.addposts {
     margin: 20px;
-    width: 25%;
     border-radius: 25px;
     border: solid black 1px;
     padding: 0 5px;
     font-size: small;
 }
 
-#addposts a {
+.addposts a {
     text-decoration: none;
     color: grey;
 }
 
-#authorInPosts {
+.authorInPosts {
     display: flex;
     justify-content: end;
     padding-right: 10px;

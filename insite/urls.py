@@ -12,4 +12,6 @@ urlpatterns = [
     path('wealth/', views.WealthPostsList.as_view(), name='wealth'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
+    path('health/<slug:slug>/', views.HealthPostDetail.as_view(), name='health_post_detail'),
+    path('healthlike/<slug:slug>', views.HealthPostLike.as_view(), name='healthpost_like'),
 ]

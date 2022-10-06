@@ -9,7 +9,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     exerpt = models.TextField(blank=True)
@@ -41,3 +42,41 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment { self.body } by { self.name }"
+
+
+class HealthPost(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="healthblog_posts")
+    updated_on = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    exerpt = models.TextField(blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    likes = models.ManyToManyField(User, related_name='healthblog_like', blank=True)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.title
+
+    def number_of_fans(self):
+        return self.likes.count()
+
+
+class HealthComment(models.Model):
+    healthpost = models.ForeignKey(
+        HealthPost, on_delete=models.CASCADE, related_name='healthcomments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"HealthComment { self.body } by { self.name }"
