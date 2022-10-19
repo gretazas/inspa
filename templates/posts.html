@@ -2,16 +2,28 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="container-fluid d-flex row">
-        <h4>Inspas</h4>
-    <div  class="d-flex justify-content-md-center">
-        <button class="addposts">Add Post</button>
-    </div>
-    <div id="posts" class="posts">
-        {% csrf_token %}
+    <h4>Inspas</h4>
+    {% if user.is_authenticated %}
+        <form method="POST">
+            <div class="d-flex justify-content-md-center">
+                <button class="addcomment">
+                    <a href="{% url 'add_post' %}">Add Post</a>
+                </button>
+            </div>
+            {% else %}
+            <div class="announcement d-flex justify-content-md-center">
+                <button class="announcebtn addcomment" data-slug="{{ post.slug }}">
+                    Add Post
+                </button>
+            </div>
+        </form>
+    {% endif %}
+    {% csrf_token %}
+    <div id="posts">
         <div class="row">
             {% for post in post_list %}
             <!-- Post content lies here-->
-            <div class="card" class="post">
+            <div class="card post">
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
@@ -19,44 +31,44 @@
                     {{ post.author }}
                 </p>
             </div>
-            
-                <div class="row">
-                    <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                            <!-- The number of likes -->
-                            <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
-                    </div>
-                    <div class="col-11">
+
+            <div class="row">
+                <div class="col-1">
+                    <strong>
                         {% if user.is_authenticated %}
-                        <button class="addcomment">
-                            <a href="{% url 'post_detail' post.slug %}">Comments</a>
-                        </button>
+                        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                    class="fas fa-heart"></i></button>
+                            {% else %}
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                    class="far fa-heart"></i></button>
+                            {% endif %}
+                        </form>
                         {% else %}
-                        <div class="announcement">
-                            <button class="announcebtnaddcomment" data-slug="{{ post.slug }}">
-                                Comments
-                            </button>
-                        </div>
+                        <span class="text-secondary"><i class="far fa-heart"></i></span>
                         {% endif %}
-                        
-                    </div>
+                        <!-- The number of likes -->
+                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                    </strong>
                 </div>
-            {% endfor %} 
+                <div class="col-11">
+                    {% if user.is_authenticated %}
+                    <button class="addcomment">
+                        <a href="{% url 'post_detail' post.slug %}">Comments</a>
+                    </button>
+                    {% else %}
+                    <div class="announcement">
+                        <button class="announcebtn addcomment" data-slug="{{ post.slug }}">
+                            Comments
+                        </button>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

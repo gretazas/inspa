@@ -15,9 +15,12 @@ buttons.forEach(button => {
         <div class="card-text">
           <div class="alert alert-primary" role="alert">
             <h4 class="alert-heading">Sorry to announce, but...</h4>
-            <p>You must login to view comments</p>
-                <a href="/posts">
+            <p>You must login to view comments/ add posts or 'like'</p>
+                <a href="">
                   Back to posts
+                </a><br>
+                <a href="/accounts/login/" >
+                  Log in
                 </a>
           </div>
         </div>
@@ -26,31 +29,5 @@ buttons.forEach(button => {
   `
   announcement.style.display = "flex"
   announcement.style.justifyContent = "center"
-})
-})
-
-const healthbuttons = document.querySelectorAll('[healthdata-slug]');
-
-healthbuttons.forEach(button => {
-  button.addEventListener('click', (event) => {
-    healthannouncement = document.getElementById('healthposts');
-    
-    healthannouncement.innerHTML = `
-    <div class="col-md-4 card mb-4 mt-3">
-      <div class="card-body">
-        <div class="card-text">
-          <div class="alert alert-primary" role="alert">
-            <h4 class="alert-heading">Sorry to announce, but...</h4>
-            <p>You must login to view comments</p>
-                <a href="/posts">
-                  Back to posts
-                </a>
-          </div>
-        </div>
-      </div>
-    </div>  
-  `
-  healthannouncement.style.display = "flex"
-  healthannouncement.style.justifyContent = "center"
 })
 })

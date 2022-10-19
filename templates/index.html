@@ -3,15 +3,14 @@
 {% block content %}
 
 <div class="container-fluid row h-100">
-
     <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
         <div class="d-flex align-items-center justify-content-center" id="circle-outer">
             <div class="post" id="circle-inner">
+                {% csrf_token %}
                 {% if user.is_authenticated %}
                 {% load crispy_forms_tags %}
-                {% csrf_token %}
                 <!-- Random post content lies here-->
-                <a href="{% url 'post_detail' slug=random_post.slug %}" class="post d-flex align-items-end">
+                 <a href="{% url 'post_detail' slug=random_post.slug %}" class="post d-flex align-items-end">
                     <p class="card-text" id="random_post">
                         {{ random_post.content | safe }} &raquo;
                     </p>
@@ -19,8 +18,8 @@
                 {% endif %}
             </div>
         </div>
-    </div>
-
+    </div> 
+    
     <div class="col-md-5 mb-4 mt-3">
         <h4>Inspas</h4>
         <div class="card d-block posts">
@@ -30,7 +29,7 @@
             <div class="post">
                 <div class="card body g-0">
                     <!-- Post content lies here-->
-                    <a href="{% url 'posts' %}" class="post">
+                    <a href="{% url 'posts' post_type='Post' %}" class="post">
                         <div class="card-text d-flex align-items-end">
                             <p>
                                 {{ post.content | safe }} &raquo;
@@ -48,12 +47,11 @@
         <!-- Types of the diff tips -->
         <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
             <h4>Tips of the day</h4>
-            <ul>
-                <li><a href="{% url 'health' %}">Health</a>&nbsp &raquo;</li>
-                <li><a href="{% url 'wealth' %}">Wealth</a>&nbsp &raquo;</li>
-                <li><a href="{% url 'exercise' %}">Exercise</a>&nbsp &raquo;</li>
-                <li class="d-flex"><a href="{% url 'mindfulness' %}">Mindfulness</a>&nbsp &raquo;</li>
-            </ul>
+            {% csrf_token %}
+                <li class="buttontype"><a href="{% url 'posts' post_type='Health' %}">Health</a>&nbsp &raquo;</li>
+                <li class="buttontype"><a href="{% url 'posts' post_type='Wealth' %}">Wealth</a>&nbsp &raquo;</li>
+                <li class="buttontype" ><a href="{% url 'posts' post_type='Exercise' %}">Exercise</a>&nbsp &raquo;</li>
+                <li class="buttontype"><a href="{% url 'posts' post_type='Mindfulness' %}">Mindfulness</a>&nbsp &raquo;</li>
         </div>
     </div>
 </div>

@@ -1,8 +1,19 @@
-from .models import Comment
+''' Imports '''
+from .models import Comment, Post
 from django import forms
 
-class CommentForm(forms.ModelForm):
 
+class CommentForm(forms.ModelForm):
+    ''' Comment form '''
     class Meta:
+        ''' Meta '''
         model = Comment
         fields = ('body',)
+
+
+class AddpostForm(forms.ModelForm):
+    ''' Add post form '''
+    class Meta:
+        ''' Meta '''
+        model = Post
+        fields = ('title',)

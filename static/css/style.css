@@ -212,7 +212,7 @@ form button {
 /* Add commets css settings */
 .addcomment {
     border-radius: 25px;
-    border: solid black 1px;
+    border: 1px solid black;
     padding: 0 5px;
     margin: 5px;
     font-size: small;
@@ -229,7 +229,7 @@ form button {
 .addposts {
     margin: 20px;
     border-radius: 25px;
-    border: solid black 1px;
+    border: 1px solid black;
     padding: 0 5px;
     font-size: small;
 }
