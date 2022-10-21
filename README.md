@@ -11,7 +11,7 @@
 <a href="https://github.com/gretazas/inspa">https://github.com/gretazas/inspa</a>
 
 <p align="center">
-<img style="border-radius:50%" width="250" height="250" src="../inspa/static/images/agile/circle.jpg" alt="Green inspirational circle">
+<img width="250" height="250" src="../inspa/static/images/agile/circle.jpg" alt="Green inspirational circle">
 </p>
 
 # Acknowledgements
