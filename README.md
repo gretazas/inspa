@@ -1,108 +1,164 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+### Top 
+<h1 style="text-align: center;"><strong>Inspa</strong></h1>
+<h2 style="text-align: center;"><strong>Welcome to the README PAGE of the Inspa</strong></h2>
 
-Welcome gretazas,
+### Link to the app:  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<a href="">https://p.herokuapp.com/</a>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+### Link to the GitHub page with Pyramid Game:  
 
-## Gitpod Reminders
+<a href="https://github.com/gretazas/inspa">https://github.com/gretazas/inspa</a>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<p align="center">
+<img width="350" height="250" src="./assets/images/inspa.jpg" alt="Green inspirational circle">
+</p>
 
-`python3 -m http.server`
+# Acknowledgements
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+# **[Agile thinking](/agile.md)**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# Content
 
-A blue button should appear to click: _Make Public_,
+* [Built to inspire](#built-to-inspire)
+* [User experience](#user-experience)
+* [Buildpacks Used](#buildpacks-used)
+* [Frameworks, Libraries & Programs I Used:](#frameworks-libraries-and-programs-i-used)
+    * [Random](#random)
+* [Proved by](#proved-by)
+* [Features](#features)
+* [Future features](#future-features)
+* [Deployment](#deployment)
+    * [How To Fork A Repository](#how-to-fork-a-repository)
+    * [How To Clone A Repository](#how-to-clone-a-repository)
+    * [How To Make A Local Clone](#how-to-make-a-local-clone)
+* [Testing](#testing)
+    *[Unitest](#unitest)
+* [Code](#code)
+* [Issues and bugs](#issues-and-bugs)
+* [Focus group](#focus-group)
+* [Contact](#contact)
 
-Another blue button should appear to click: _Open Browser_.
+# Built to inspire
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Inspa circle is meant to inspire for greater things in life
 
-To log into the Heroku toolbelt CLI:
+# User experience
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+# Buildpacks Used
 
-## Release History
+- heroku/python
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+# Frameworks, Libraries and Programs I Used
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Random
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+# Proved By
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- <a href="http://pep8online.com/" target="_blank">PEP8: </a> no errors found
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<p align="right">(<a href="#top">Back to top</a>)</p>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+# Features
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- The first feature in this app is a .
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+# Future features
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* In the future I would like to add one more ...
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<p align="right">(<a href="#top">Back to top</a>)</p>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+# Deployment
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+This project was deployed using a personal Heroku account.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Steps for deployment:
+- Fork or clone this repository
+- Create a new Heroku app
+- Set the buildpacks to Python and NodeJS in the order
+- Link the Heroku app to the repository
+- Click on **Deploy**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+[How to Fork a Repository:](https://support.atlassian.com/bitbucket-cloud/docs/fork-a-repository/)
+1. Login or Sign Up to [GitHub](https://github.com/).
+2. On GitHub, go to [https://github.com/gretazas/pyramid](https://github.com/gretazas/pyramid)
+3. In the top right corner, click "Fork".
 
-## FAQ about the uptime script
+[How to Clone a Repository:](https://support.atlassian.com/bitbucket-cloud/docs/clone-a-repository/)
+1. Login in to [GitHub](https://github.com/).
+2. Fork the repository [https://github.com/gretazas/pyramid](https://github.com/gretazas/pyramid) using the steps above in [How To Fork a Repository](#how-to-fork-a-repository)
+3. Above the file list, click "Code".
+4. Choose if you want to close using HTTPS, SSH or GitHub CLI, then click the copy button to the right.
+5. Open Git Bash.
+6. Change the directory to where you want your clone to go.
+7. Type git clone and then paste the URL you copied in step 4.
+8. Press Enter to create your clone.
 
-**Why have you added this script?**
+How to make a Local Clone:
+1. Login in to [GitHub](https://github.com/)
+2. Under the repository name, above the list of files, click "Code".
+3. Here you can either Clone or Download the repository.
+4. You should close the repository using HTTPS, clicking on the icon to copy the link.
+5. Open Git Bash.
+6. Change the current working directory to the new location, where you want the cloned directory to be.
+7. Type git clone and then paste the URL you copied in step 4.
+8. Press Enter and your local clone will be created.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+The site was deployed to Github pages using the following steps:
+* In the Github repository, navigate to the settings tab.
+* Scroll down and select Pages from the left side navigation menu to open Github pages.
+* In the Source section, click on the dropdown menu and select the Master branch.
+* Once the Master branch is selected the page will refresh to display a message stating "Your site is published at 
 
-**How will this affect me?**
+<p align="right">(<a href="#top">Back to top</a>)</p>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+# Testing
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+I have manually tested this project by doing the following:
+- Passed the code through a PEP8 linter and confirmed there are no problems.
+- Given invalid inputs: strings when numbers are expected.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+# Code
 
-**So….?**
+Inspiration for the project came from my daughter. Hope website would be helpful to some one.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+**[Code explained in detail](./functions.md)**
 
-**Can I opt out?**
+* All code was written by myself and was learned from [www.codeinstitute.net](https://www.codeinstitute.net).
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+# Issues and bugs
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+* ... 
+<br>
 
-**Anything more?**
+<p align="right">(<a href="#top">Back to top</a>)</p>
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+# Focus Group
 
----
+* I'd like to thank the following people for the help they gave me with this project:
+  - My daughter Madelyne for helping me with README.md page <br>
+  - John, Alex, and Gemma from Code Institute Tutor Assistance.<br>
+  - Help from Code Institute Slack app: 
+        DaveHarricks_ci, Sean YOUng_aluminati, Ian Meigh_5p,
+        Eventyret_mentor, DaveHorocks_5p, Manni_alumnus
 
-Happy coding!
+  <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
+  
+ 
+# Contact 
+
+![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) https://github.com/gretazas<br>
+Greta Baliunaite: [ https://www.facebook.com/greta.baliunaite]( https://www.facebook.com/greta.baliunaite)
+
+<br>
+<br>
+
+![Safe](https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==)
+
+<p align="right">(<a href="#top">Back to top</a>)</p>
