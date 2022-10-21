@@ -4,14 +4,14 @@
 
 ### Link to the app:  
 
-<a href="">https://p.herokuapp.com/</a>
+<a href="https://inspasite.herokuapp.com">https://inspasite.herokuapp.com</a>
 
 ### Link to the GitHub page with Pyramid Game:  
 
 <a href="https://github.com/gretazas/inspa">https://github.com/gretazas/inspa</a>
 
 <p align="center">
-<img width="350" height="250" src="./assets/images/inspa.jpg" alt="Green inspirational circle">
+<img style="border-radius:50%" width="250" height="250" src="../inspa/static/images/agile/circle.jpg" alt="Green inspirational circle">
 </p>
 
 # Acknowledgements
