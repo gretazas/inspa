@@ -47,11 +47,14 @@
       </p>
     </div>
     {% load crispy_forms_tags %}
-    <!-- Feedback form -->
-    <div class="card-text post">
-      <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="feedback">
-        
-  </div>
-</div>
-
+    <!-- Usful links for short speaches -->
+    <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
+      <h4>Before you leave...</h4>
+      <h6>Short motivational speaches:</h6>
+      {% csrf_token %}
+          <li class="buttontype"><a  target="_blank" href="https://www.youtube.com/watch?v=lRrZiiMT68g">Oprah Winfrey</a>&nbsp &raquo;</li>
+          <li class="buttontype"><a  target="_blank" href="https://www.youtube.com/watch?v=68ZcE5GQP9c">Matthew McConaughey</a>&nbsp &raquo;</li>
+          <li class="buttontype"><a  target="_blank" href="https://www.youtube.com/watch?v=o58OJJT37Nk">Simon Sinek</a>&nbsp &raquo;</li>
+          <li class="buttontype"><a  target="_blank" href="https://www.youtube.com/watch?v=7BOi0H59tXY">Steve Harvey</a>&nbsp &raquo;</li>
+    </div>
 {% endblock %}

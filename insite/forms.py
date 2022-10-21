@@ -16,7 +16,7 @@ class AddpostForm(forms.ModelForm):
     class Meta:
         ''' Meta '''
         model = Post
-        fields = ('title',)
+        fields = ('title', 'type', 'content')
 
 
 class AddFeedback(forms.ModelForm):
@@ -24,8 +24,4 @@ class AddFeedback(forms.ModelForm):
         ''' Meta '''
         model = Feedback
         fields = ('name', 'email', 'body')
-        # wiglets = {
-        #     'name': forms.CharField(atts={'class': 'form-control'}),
-        #     'email': forms.EmailField(atts={'class': 'form-control'}),
-        #     'body': forms.EmailField(atts={'class': 'form-control'}),
-        # }
+        prepopulated_fields = {'slug': ('title',)}

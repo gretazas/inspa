@@ -1,7 +1,7 @@
 ''' Imports '''
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Post, Comment
+from .models import Post, Comment, Feedback
 
 
 @admin.register(Post)
@@ -25,3 +25,10 @@ class Comment(admin.ModelAdmin):
     def approve_comments(self, queryset):
         ''' Comment aproval status '''
         queryset.update(approved=True)
+
+
+@admin.register(Feedback)
+class Feedback(admin.ModelAdmin):
+    ''' Post comment '''
+    list_display = ('name', 'email', 'body')
+    search_fields = ('name', 'email', 'body')

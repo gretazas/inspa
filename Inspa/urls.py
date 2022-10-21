@@ -24,6 +24,7 @@ urlpatterns = [
     path('',  include('insite.urls')),
     path('accounts/', include('allauth.urls')),
     path('', views.HomePage.as_view(), name='home'),
+    path('team/', views.Team.as_view(), name='team'),
     path('feedback/', views.Feedback.as_view(), name='feedback'),
     path('add_post/', views.Addpost.as_view(), name='add_post'),
     path('posts/<post_type>/', views.PostsList.as_view(), name='posts'),

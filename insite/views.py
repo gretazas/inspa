@@ -5,9 +5,11 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
-from .forms import CommentForm, AddpostForm
+from .forms import CommentForm, AddpostForm, AddFeedback
 from .models import Post, Comment, Feedback
 from django.contrib import messages
+from datetime import datetime as d
+from django.contrib.auth.models import User
 
 
 class HomePage(generic.ListView):
@@ -101,12 +103,36 @@ class PostDetail(View):
         )
 
 
-class Addpost(CreateView):
+class Addpost(View):
     ''' Add post '''
     model = Post
     template_name = "add_post.html"
     fields = ('title', 'status', 'slug', 'author', 'type', 'content')
 
+    def get(self, request):
+        form = AddpostForm(data=request.POST)
+        return render(
+            request, "add_post.html",
+            {
+                "form": form,
+            },
+        )
+
+    def post(self, request):
+        ''' Comments attached to posts '''
+        form = AddpostForm(data=request.POST)
+        if form.is_valid():
+            form.instance.email = request.user.email
+            form.instance.name = request.user.username
+            form.instance.id = 1
+            form.instance.created_on = d.now()
+            addpost = form.save(commit=False)
+            addpost.save()
+        else:
+            form = AddpostForm()
+        return render(
+            request, "add_post.html"
+        )
 
 class PostLike(View):
     ''' Post and functions related with like views '''
@@ -121,12 +147,51 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class Feedback(CreateView):
+class Feedback(View):
     ''' Render contact.html '''
     model = Feedback
     template_name = "contact.html"
     fields = ('name', 'email', 'body')
 
-    def contact(self, request):
-        ''' Render contact.html '''
-        return render(request, "contact.html")
+    def get(self, request):
+        form = AddFeedback(data=request.POST)
+        name = request.user
+        email = request.user.email
+        return render(
+            request, "contact.html",
+            {
+                "form": form,
+                "name": name,
+                "email": email,
+            },
+        )
+
+    def feedback(self, request):
+        ''' Render contact.html '''   
+        form = AddFeedback(data=request.POST)
+        name = request.user.name
+        email = request.user.email
+        if form.is_valid():
+            form.instance.email = request.user.email
+            form.instance.name = request.user.username
+            form.instance.id = 1
+            form.instance.created_on = d.now()
+            addpost = form.save(commit=False)
+            addpost.save()
+        else:
+            form = AddpostForm()
+        
+        return render(request,
+                "contact.html",
+                {
+                    "form": form,
+                    "name": name,
+                    "email": email,
+                },)
+
+
+class Team(View):
+    ''' Render our team page'''
+    def get(self, request):
+        ''' Team.html '''
+        return render(request, "team.html")

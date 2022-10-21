@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid row h-100">
+  <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
+    <div class="d-flex align-items-center justify-content-center" id="circle-outerSignIn">
+      <div id="circle-innerSignIn">
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-md-5 mb-4 mt-3">
+    <h4>About Us</h4>
+    <div class="card" id="about_us">
+        <span class="row">
+            <img class="col-md-3 mt-3" src="" alt="Picture of the doctor" width="50" height="60">
+            <p class="col-md-8 mt-3">
+                Dr. Ronan O'brien
+            </p>
+        </span>
+      <hr>
+      <span class="row">
+        <img class="col-md-3 mt-3" src="" alt="Picture of the doctor" width="50" height="60">
+        <p class="col-md-8 mt-3">
+           Dr. Marcus Martins
+        </p>
+    </span>
+      <hr>
+      <span class="row">
+        <img class="col-md-3 mt-3" src="" alt="Picture of the doctor" width="50" height="60">
+        <p class="col-md-8 mt-3">
+            Dr. Charlotte McDonald
+        </p>
+    </span>
+    </div>
+    {% load crispy_forms_tags %}
+    <!-- Usful links for short speaches -->
+    <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
+      <h4>Useful links:</h4>
+      {% csrf_token %}
+          <li class="buttontype"><a  target="_blank" href="https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder/overview/">Anxiety</a>&nbsp &raquo;</li>
+          <li class="buttontype"><a  target="_blank" href="https://www2.hse.ie/conditions/clinical-depression/">Depression</a>&nbsp &raquo;</li>
+          <li class="buttontype"><a  target="_blank" href="https://jamesclear.com/procrastination">Procrastination</a>&nbsp &raquo;</li>
+          <li class="buttontype"><a  target="_blank" href="https://www.mentalhealthireland.ie/">Mental Health</a>&nbsp &raquo;</li>
+    </div>
+{% endblock %}

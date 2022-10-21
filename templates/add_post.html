@@ -1,27 +1,29 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="card-text post">
 
-    <h3>Add post here...</h3>
-    <p>Posting as: {{ user.username }}</p>
+<div class="col-md-8 card mb-4  mt-3 "></div>
+    <div class="card-body">
+        <h3>Add post here...</h3>
+        <p>Posting as: {{ user.username }}</p>
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="addposts" name="add_post" value="add_post">Post</button>
-    </form>
-    <!-- Message after commented -->
-    {% if posted %}
-    <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Well done!</h4>
-        <p>You successfully created a post.</p>
-        <hr>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="commentbtn" class="btn btn-signup btn-lg" class="addposts" name="add_post" value="add_post">Add
+                Post</button>
+        </form>
+        <!-- Message after commented -->
+        {% if posted %}
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p>You successfully created a post.</p>
+            <hr>
+        </div>
+        <div class="alert alert-success" role="alert">
+            Your post is awaiting approval.
+        </div>
+        {% endif %}
     </div>
-    <div class="alert alert-success" role="alert">
-        Your post is awaiting approval.
-    </div>
-    {% endif %}
-
-
+</div>
 {% endblock content %}

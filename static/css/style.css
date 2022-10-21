@@ -188,6 +188,10 @@ nav {
 
 /* Contact.html css settings/ Feedback */
 
+#id_body {
+    height: 100px;
+}
+
 #feedbackbtn {
     margin-left: 35%;
     border: 1px solid grey;
