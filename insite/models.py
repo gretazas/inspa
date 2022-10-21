@@ -59,3 +59,21 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment { self.body } by { self.name }"
+
+
+class Feedback(models.Model):
+    ''' Feedback '''
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+
+    class Meta:
+        ''' Meta '''
+        ordering = ['name']
+
+    def __str__(self):
+        return f"Feedback from { self.name }, context: { self.body }, reply to { self.email }"
+
+    def get_absolute_url(self):
+        ''' Add post '''
+        return reverse('')

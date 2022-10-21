@@ -1,21 +1,57 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+<div class="container-fluid row h-100">
+  <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
+    <div class="d-flex align-items-center justify-content-center" id="circle-outerSignIn">
+      <div id="circle-innerSignIn">
+        <div class="container" id="signin">
+          <div class="row">
+            <div class="col-md-8 mt-3">
+              <h3 style="margin: 15px;">{% trans "Sign Out" %}</h3>
+              <p style="margin-left:15px ;">{% trans 'Till the next time...' %}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 mt-3">
+              <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button id="signInbtn" class="btn" type="submit">{% trans 'Sign Out' %}</button>
+              </form>
+            </div>
+          </div>
+        </div>
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
 
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5 mb-4 mt-3">
+    <h4>About Us</h4>
+    <div class="card" id="about_us">
+      <p>
+        Our Youth club first time opened in 2003.
+        We started to work with young local kids in order to help to cope with anxiety and day-to-day issues.
+        Here you could share your emotions and tips on how to cope with unwanted feelings.
+        In 2005 we opened another youth club in Galway. And day after day we grow stronger.
+      </p>
+    </div>
+    {% load crispy_forms_tags %}
+    <!-- Feedback form -->
+    <div class="card-text post">
+      <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="feedback">
+        
+  </div>
+</div>
 
 {% endblock %}

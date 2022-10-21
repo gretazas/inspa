@@ -1,60 +1,110 @@
-{% extends "base.html" %}
-{% block content %}
-{% load crispy_forms_tags %}
-<div class="container-fluid d-flex row">
-    <h4>Inspas</h4>
-    {% if user.is_authenticated %}
-        <form method="POST">
-            <div class="d-flex justify-content-md-center">
-                <button class="addcomment">
-                    <a href="{% url 'add_post' %}">Add Post</a>
-                </button>
-            </div>
-            {% else %}
-            <div class="announcement d-flex justify-content-md-center">
-                <button class="announcebtn addcomment" data-slug="{{ post.slug }}">
-                    Add Post
-                </button>
-            </div>
-        </form>
-    {% endif %}
-    {% csrf_token %}
-    <div id="posts">
-        <div class="row">
-            {% for post in post_list %}
-            <!-- Post content lies here-->
-            <div class="card post">
-                <p class="card-text">
-                    {{ post.content | safe }}
-                </p>
-                <p class="authorInPosts">
-                    {{ post.author }}
-                </p>
-            </div>
+{% load static %}
 
-            <div class="row">
-                <div class="col-1">
-                    <strong>
-                        {% if user.is_authenticated %}
-                        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                            {% csrf_token %}
-                            {% if liked %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                    class="fas fa-heart"></i></button>
-                            {% else %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                    class="far fa-heart"></i></button>
-                            {% endif %}
-                        </form>
-                        {% else %}
-                        <span class="text-secondary"><i class="far fa-heart"></i></span>
-                        {% endif %}
-                        <!-- The number of likes -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
-                    </strong>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <link rel="shortcut icon" href="#">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+    <title>Inspa</title>
+</head>
+
+<body>
+    <!-- Nav bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        {% csrf_token %}
+        <a class="navbar-brand" href="#">Inspa</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'feedback' %}">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+{% load crispy_forms_tags %}
+<div id="posts">
+    <div class="container-fluid d-flex row">
+        <h4>Inspas</h4>
+        {% if user.is_authenticated %}
+            <form method="POST">
+                <!-- Add post button -->
+                {% csrf_token %}
+                <div class="d-flex justify-content-md-center">
+                    <button class="addcomment">
+                        <a href="{% url 'add_post' %}">Add Post</a>
+                    </button>
                 </div>
+                {% else %}
+                <div class="announcement d-flex justify-content-md-center">
+                    <button class="announcebtn addcomment" data-slug="{{ post.type }}">
+                        Add Post
+                    </button>
+                </div>
+            </form>
+        {% endif %}
+
+        {% for post in post_list %}
+
+        <div id="posts">
+            <div class="row">
+                
+                <!-- Post content lies here-->
+                <div class="card post" id="postscontainer" >
+                    <p class="card-text">
+                    {% csrf_token %}
+                        {{ post.content | safe }}
+                    </p>
+                    <p class="authorInPosts">
+                        {{ post.author }}
+                    </p>
+                </div>
+                    
                 <div class="col-11">
-                    {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
+                <!-- Comment if logged in -->
+                    {% csrf_token %}
                     <button class="addcomment">
                         <a href="{% url 'post_detail' post.slug %}">Comments</a>
                     </button>
@@ -64,12 +114,13 @@
                             Comments
                         </button>
                     </div>
-                    {% endif %}
-
+                {% endif %}
                 </div>
+                
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
-{% endblock content %}
+<script type="text/javascript" src="/static/script/script.js"></script>
+</body>

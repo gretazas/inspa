@@ -4,7 +4,7 @@
 
 <div class="container-fluid row h-100">
     <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
-        <div class="d-flex align-items-center justify-content-center" id="circle-outer">
+        <div class="d-flex align-items-center justify-content-center circle-outer" id="circle-outer">
             <div class="post" id="circle-inner">
                 {% csrf_token %}
                 {% if user.is_authenticated %}
@@ -27,23 +27,25 @@
             {% csrf_token %}
             {% for post in post_list %}
             <div class="post">
-                <div class="card body g-0">
+                <div class="card  body g-0">
                     <!-- Post content lies here-->
                     <a href="{% url 'posts' post_type='Post' %}" class="post">
-                        <div class="card-text d-flex align-items-end">
+                        <div class="roundpostup card-text d-flex align-items-end">
                             <p>
                                 {{ post.content | safe }} &raquo;
                             </p>
                         </div>
-                        <p id="author">
-                            {{ post.author }}
-                        </p>
+                        <div class="roundpostdown">
+                            <p id="author">
+                                {{ post.author }}
+                            </p>
+                        </div>
                     </a>
                 </div>
             </div>
             {% endfor %}
         </div>
-
+        
         <!-- Types of the diff tips -->
         <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
             <h4>Tips of the day</h4>
@@ -55,5 +57,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

@@ -19,7 +19,7 @@
                         <div class="col-md-8 mt-3">
                             <span>Mon - Thur 9:30 - 13:00</span><br>
                             <span>Thur - Fri 10:00 - 13:30</span><br>
-                            <span>Sun Closed</span>
+                            <span>Sun &nbsp;-  Closed</span>
                         </div>
                     </div>
                 </div>
@@ -38,27 +38,47 @@
                     <h6>Email address: </h6>youthclub@yahoo.com
                 </span>
             </div>
-            <span>
+            <hr>
+            <span class="row">
                 <h6>Addresses: </h6>
+                
+                <span class="col-md-4 mb-4 mt-3">
                 23 House Name,<br>
                 Bishop Road, <br>
                 Co. Galway<br>
-                <hr>
+                </span>
+                <span class="col-md-4 mb-4 mt-3">
                 26 House Name,<br>
                 Bishop Street, <br>
                 Co Lthrum<br>
-                <hr>
+                </span>
+                <span class="col-md-4 mb-4 mt-3">
                 1 House Name,<br>
                 Eglinton Road, <br>
                 Dublin<br>
+                </span>
             </span>
 
         </div>
-
-        <!-- Map -->
-        <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="map">
-            <h4>Map</h4>
+        {% load crispy_forms_tags %}
+        <!-- Feedback form -->
+        <div class="card-text post">
+      <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="feedback">
+        <h4>Feedback Form</h4>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" id="feedbackbtn" name="feedback" value="feedback" class="btn btn-lg">Submit</button>
+        </form>
+        <!-- Message after commented -->
+        {% if feedback %}
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p>Thank you for your feedback.</p>
         </div>
+        {% endif %}
+  </div>
+</div>
     </div>
 </div>
 </div>

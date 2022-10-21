@@ -5,8 +5,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
-from .forms import CommentForm
-from .models import Post
+from .forms import CommentForm, AddpostForm
+from .models import Post, Comment, Feedback
+from django.contrib import messages
 
 
 class HomePage(generic.ListView):
@@ -40,11 +41,8 @@ class PostsList(generic.ListView):
 
     def get_queryset(self):
         ''' Render triggered type using post_type'''
-        # get the original queryset
         queryset = super().get_queryset()
-        # filter by a variable captured from url, for example
         new_qs = queryset.filter(type=self.kwargs['post_type'])
-        # return the new queryset with the filtered post type
         return new_qs
 
 
@@ -63,8 +61,7 @@ class PostDetail(View):
             liked = True
 
         return render(
-            request,
-            "post_detail.html",
+            request, "post_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -93,8 +90,7 @@ class PostDetail(View):
         else:
             comment_form = CommentForm()
         return render(
-            request,
-            "post_detail.html",
+            request, "post_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -109,7 +105,7 @@ class Addpost(CreateView):
     ''' Add post '''
     model = Post
     template_name = "add_post.html"
-    fields = ('title', 'slug', 'author', 'type', 'content')
+    fields = ('title', 'status', 'slug', 'author', 'type', 'content')
 
 
 class PostLike(View):
@@ -125,6 +121,12 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def contact(request):
+class Feedback(CreateView):
     ''' Render contact.html '''
-    return render(request, "contact.html")
+    model = Feedback
+    template_name = "contact.html"
+    fields = ('name', 'email', 'body')
+
+    def contact(self, request):
+        ''' Render contact.html '''
+        return render(request, "contact.html")

@@ -9,7 +9,7 @@
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="addposts" name="addpost" value="addpost">Post</button>
+        <button class="addposts" name="add_post" value="add_post">Post</button>
     </form>
     <!-- Message after commented -->
     {% if posted %}

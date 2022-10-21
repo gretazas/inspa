@@ -15,19 +15,49 @@ main {
 }
 
 /* Green Inspa circle at the background settings */
-#circle-outer {
-    background-color: rgba(171, 196, 171, 0.5);
-    height:400px;
-    width:400px;
-    border-radius: 50%;
-    overflow: auto;
-
+.circle-outer:before,
+.circle-outer:after {
+  background-color: rgba(171, 196, 171, 0.5);
+  height:350px;
+  width:350px;
+  border-radius: 50%;
+  overflow: auto;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
 }
+
+.circle-outer:before {
+    height:300px;
+    width:300px;
+  }
+  
+.circle-outer:after {
+    height:330px;
+    width:330px;
+  }
+
+  @keyframes circle-outer {
+    0% {
+      transform: scale( 1 );    
+    }
+    10% {
+      transform: scale( 1.25 ) 
+    } 
+    40% {
+      transform: scale( 1.5 ) 
+    }
+  }
+
+.circle-outer {
+    animation: circle-outer 2s infinite;
+  }
 
 #circle-inner {
     background-color:rgb(171, 196, 171);
-    height: 370px;
-    width: 370px;
+    height: 300px;
+    width: 300px;
     border-radius:50%;
     display: grid;
     place-items: center;
@@ -40,19 +70,29 @@ main {
     height: 25%!important;
 }
 
-#tip_types li {
-    padding: 5px;
-}
-
 /* Navigaton */
 nav {
     margin-left: 30px;
 }
 
 /* Posts */
+#postscontainer {
+    background-color: rgb(218, 236, 233);
+}
+
 .posts {
     height: 65%!important;
     overflow-y: scroll;
+}
+
+.roundpostup {
+    border-radius: 10px 10px 0 0;
+    background-color: rgb(218, 236, 233);
+}
+
+.roundpostdown {
+    border-radius: 0 0 10px 10px;
+    background-color: rgb(168, 196, 191)
 }
 
 .post {
@@ -110,30 +150,10 @@ nav {
     text-align: center;
 }
 
-/* Signin button */
-#signInbtn {
-    border: 1px solid grey;
-    border-radius: 25px;
-}
-
 /* Information about club */
 #about_us {
     height: 55%!important;
     padding: 30px 20px;
-}
-
-/* Feedback form */
-#feedback {
-    padding: 20px;
-    height: 35%!important;
-}
-
-textarea {
-    height: 120px;
-}
-
-button {
-    margin: 5px;
 }
 
 /* Signup css settings*/
@@ -166,8 +186,14 @@ button {
     margin-left: 20%;
 }
 
-/* Contact.html css settings */
+/* Contact.html css settings/ Feedback */
 
+#feedbackbtn {
+    margin-left: 35%;
+    border: 1px solid grey;
+    border-radius: 25px;
+    background-color: rgb(218, 236, 233);
+}
 
 /* Green Inspa circles/ Opening hours */
 #circle-outerContact {
@@ -185,7 +211,7 @@ button {
 }
 
 #addresses {
-    height: 60%!important;
+    height: 40%!important;
     padding-left: 10px;
 }
 
@@ -209,20 +235,6 @@ form button {
     margin: 5px;
 }
 
-/* Add commets css settings */
-.addcomment {
-    border-radius: 25px;
-    border: 1px solid black;
-    padding: 0 5px;
-    margin: 5px;
-    font-size: small;
-}
-
-.addcomment a {
-    text-decoration: none;
-    color: grey;
-}
-
 /* Css in Posts */
 
 /* Style username at the end of the post  */
@@ -244,6 +256,45 @@ form button {
     justify-content: end;
     padding-right: 10px;
     margin-bottom: 0px;
+}
+
+/* Signin button */
+#signInbtn {
+    border: 1px solid grey;
+    border-radius: 25px;
+    background-color: rgb(218, 236, 233);
+    margin-left: 45px;
+}
+
+/* Post detail page */
+
+#main {
+    background-color: rgb(171, 196, 171);;
+}
+
+/* Comments */
+#commentform {
+    display: flex;
+    flex-direction: column;
+}
+
+#commentbtn {
+    border: 1px solid grey;
+    border-radius: 25px;
+    background-color: rgb(218, 236, 233);
+}
+
+.addcomment {
+    border-radius: 25px;
+    border: 1px solid black;
+    padding: 0 5px;
+    margin: 5px;
+    font-size: small;
+}
+
+.addcomment a {
+    text-decoration: none;
+    color: grey;
 }
 
 /* Footer */
