@@ -29,10 +29,9 @@
             <div class="post">
                 <div class="card  body g-0">
                     <!-- Post content lies here-->
-                    <a href="{% url 'posts' post_type='Post' %}" class="post">
                         <div class="roundpostup card-text d-flex align-items-end">
                             <p>
-                                {{ post.content | safe }} &raquo;
+                                {{ post.content | safe }}
                             </p>
                         </div>
                         <div class="roundpostdown">

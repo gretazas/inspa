@@ -9,7 +9,6 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Post(models.Model):
     ''' Post related items '''
     POST_TYPES = (
-                ("Post", "Post"),
                 ("Health", "Health"),
                 ("Wealth", "Wealth"),
                 ("Exercise", "Exercise"),
@@ -61,19 +60,3 @@ class Comment(models.Model):
         return f"Comment { self.body } by { self.name }"
 
 
-class Feedback(models.Model):
-    ''' Feedback '''
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-
-    class Meta:
-        ''' Meta '''
-        ordering = ['name']
-
-    def __str__(self):
-        return f"Feedback from { self.name }, context: { self.body }, reply to { self.email }"
-
-    def get_absolute_url(self):
-        ''' Add post '''
-        return reverse('')

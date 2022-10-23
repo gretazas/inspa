@@ -1,3 +1,5 @@
 from django.test import TestCase
 
-# Create your tests here.
+class TestDjango(TestCase):
+    def test_it_is_workin(self):
+        self.assertEqual(1, 0)

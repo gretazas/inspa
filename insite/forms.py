@@ -1,5 +1,5 @@
 ''' Imports '''
-from .models import Comment, Post, Feedback
+from .models import Comment, Post
 from django import forms
 
 
@@ -19,9 +19,3 @@ class AddpostForm(forms.ModelForm):
         fields = ('title', 'type', 'content')
 
 
-class AddFeedback(forms.ModelForm):
-    class Meta:
-        ''' Meta '''
-        model = Feedback
-        fields = ('name', 'email', 'body')
-        prepopulated_fields = {'slug': ('title',)}

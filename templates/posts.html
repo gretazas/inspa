@@ -45,7 +45,7 @@
                     <a class="nav-link" href="team">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'feedback' %}">Contact</a>
+                    <a class="nav-link" href="#">Contact</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
@@ -106,7 +106,7 @@
                 <!-- Comment if logged in -->
                     {% csrf_token %}
                     <button class="addcomment">
-                        <a href="{% url 'post_detail' post.slug %}">Comments</a>
+                        <a href="{% url 'post_detail' slug=post.slug %}">Comments</a>
                     </button>
                     {% else %}
                     <div class="announcement">

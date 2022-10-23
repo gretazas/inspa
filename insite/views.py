@@ -5,11 +5,12 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
-from .forms import CommentForm, AddpostForm, AddFeedback
-from .models import Post, Comment, Feedback
+from .forms import CommentForm, AddpostForm
+from .models import Post, Comment
 from django.contrib import messages
 from datetime import datetime as d
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 
 class HomePage(generic.ListView):
@@ -17,7 +18,7 @@ class HomePage(generic.ListView):
 
     model = Post
     queryset = Post.objects.filter(
-            status=1, type="Post").order_by('-created_on')
+            status=1).order_by('-created_on')
     template_name = "index.html"
     posts = list(queryset)
     random_post = random.choice(posts)
@@ -52,6 +53,7 @@ class PostDetail(View):
     ''' Post related views'''
     model = Post
     template_name = 'post_detail.html'
+    slug = Post.slug
 
     def get(self, request, slug):
         ''' Render separate post using slug'''
@@ -118,21 +120,25 @@ class Addpost(View):
             },
         )
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         ''' Comments attached to posts '''
+        queryset = Post.objects.all()
+        posts = list(queryset)
         form = AddpostForm(data=request.POST)
-        if form.is_valid():
-            form.instance.email = request.user.email
-            form.instance.name = request.user.username
-            form.instance.id = 1
-            form.instance.created_on = d.now()
-            addpost = form.save(commit=False)
-            addpost.save()
-        else:
-            form = AddpostForm()
-        return render(
-            request, "add_post.html"
-        )
+        for post in posts:
+            if form.is_valid():
+                form.instance.author = request.user
+                form.instance.email = request.user.email
+                form.instance.author.id = request.user.id
+                form.instance.slug = slugify(post.title)
+                form.instance.created_on = d.now()
+                addpost = form.save(commit=False)
+                addpost.save()
+            else:
+                form = AddpostForm()
+            return render(
+                request, "posts.html"
+            )
 
 class PostLike(View):
     ''' Post and functions related with like views '''
@@ -147,51 +153,15 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class Feedback(View):
-    ''' Render contact.html '''
-    model = Feedback
-    template_name = "contact.html"
-    fields = ('name', 'email', 'body')
-
-    def get(self, request):
-        form = AddFeedback(data=request.POST)
-        name = request.user
-        email = request.user.email
-        return render(
-            request, "contact.html",
-            {
-                "form": form,
-                "name": name,
-                "email": email,
-            },
-        )
-
-    def feedback(self, request):
-        ''' Render contact.html '''   
-        form = AddFeedback(data=request.POST)
-        name = request.user.name
-        email = request.user.email
-        if form.is_valid():
-            form.instance.email = request.user.email
-            form.instance.name = request.user.username
-            form.instance.id = 1
-            form.instance.created_on = d.now()
-            addpost = form.save(commit=False)
-            addpost.save()
-        else:
-            form = AddpostForm()
-        
-        return render(request,
-                "contact.html",
-                {
-                    "form": form,
-                    "name": name,
-                    "email": email,
-                },)
-
-
 class Team(View):
     ''' Render our team page'''
     def get(self, request):
         ''' Team.html '''
         return render(request, "team.html")
+
+
+class Contact(View):
+    ''' Render our team page'''
+    def get(self, request):
+        ''' Team.html '''
+        return render(request, "contact.html")

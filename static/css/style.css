@@ -150,12 +150,6 @@ nav {
     text-align: center;
 }
 
-/* Information about club */
-#about_us {
-    height: 55%!important;
-    padding: 30px 20px;
-}
-
 /* Signup css settings*/
 
 /* Green Inspa circles at the background settings */
@@ -186,19 +180,6 @@ nav {
     margin-left: 20%;
 }
 
-/* Contact.html css settings/ Feedback */
-
-#id_body {
-    height: 100px;
-}
-
-#feedbackbtn {
-    margin-left: 35%;
-    border: 1px solid grey;
-    border-radius: 25px;
-    background-color: rgb(218, 236, 233);
-}
-
 /* Green Inspa circles/ Opening hours */
 #circle-outerContact {
     background-color: rgba(171, 196, 171, 0.5);
@@ -214,8 +195,8 @@ nav {
     border-radius:50%;
 }
 
+/* Contact info */
 #addresses {
-    height: 40%!important;
     padding-left: 10px;
 }
 
@@ -226,6 +207,13 @@ nav {
 
 #addresses h6 {
     padding-top: 20px;
+}
+
+/* Team page  */
+
+.img {
+    max-height: 90px;
+    min-width: 80px;
 }
 
 /* Random post only if logged in */
@@ -320,4 +308,9 @@ form button {
 
 .fa-youtube-square:hover {
     color: #FF0000;
+}
+
+@media only screen and (max-width: 920px){
+   
+   
 }

@@ -32,14 +32,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['inspasite.herokuapp.com', 'localhost']
 CSRF_TRUSTED_ORIGINS = [
-                'https://8000-gretazas-inspa-stze9rw27qr.ws-eu72.gitpod.io',
+                'https://800o-gretazas-inspa-stze9rw27qr.ws-eu72.gitpod.io',
                 'https://*.*.gitpod.io', 'http://127.0.0.1:8000/',
-                'http://127.0.0.1:8001/'
+                'http://127.0.0.1:800o/'
                         ]
 PAPERLESS_CSRF_TRUSTED_ORIGINS = [
-                'http://127.0.0.1:8000/',
-                # 'https://gretazas-inspa-stze9rw27qr.ws-eu71.gitpod.io'
+                'http://127.0.0.1:8001/',
                         ]
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_VARIFICATION = 'none'
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'

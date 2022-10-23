@@ -11,7 +11,11 @@
 <a href="https://github.com/gretazas/inspa">https://github.com/gretazas/inspa</a>
 
 <p align="center">
+<<<<<<< HEAD
 <img width="250" height="250" src="../inspa/static/images/agile/circle.jpg" alt="Green inspirational circle">
+=======
+<img style="border-radius:50%" width="250" height="250" src="../inspa/static/images/agile/circle.jpg" alt="Green inspirational circle"/>
+>>>>>>> 3005a82 (go through responsive design changes)
 </p>
 
 # Acknowledgements
@@ -26,6 +30,7 @@
 * [Buildpacks Used](#buildpacks-used)
 * [Frameworks, Libraries & Programs I Used:](#frameworks-libraries-and-programs-i-used)
     * [Random](#random)
+    * [Django](#django)
 * [Proved by](#proved-by)
 * [Features](#features)
 * [Future features](#future-features)
@@ -42,10 +47,22 @@
 
 # Built to inspire
 
-- Inspa circle is meant to inspire for greater things in life
+- Inspa circle is meant to inspire for greater things in life. To spin great ideas.
 
-# User experience
+# User stories
 
+- As a site user I can log in so that I can post, comment, and delete messages/ get Inspa of the day.
+- As a site user I can register so that I can log in.
+- As a site user I can enjoy the view so that I would get inspired by excellent UI and UX.
+- As a site member I can post so that can share wisdom and inspiration.
+- As a site member I can comment on the posts so that could communicate.
+- As a site user I can read posts so that could get ideas and inspiration.
+- As a site member I can receive Inspa so that I would get inspiration and wisdom.
+- As a site user I can see inspirational people's names and their descriptions so that I learn about Inspa people.
+- As a site user I can view info so that I can contact the company.
+- As a site user I can use links so that I can get Inspired by famous speeches.
+- As a site user I can view info about youth club members so that I could learn about the team members.
+- As a site user I can view posts so that I can benefit from tips.
 
 
 # Buildpacks Used
@@ -54,7 +71,13 @@
 
 # Frameworks, Libraries and Programs I Used
 
-- Random
+- Bootstrap
+- Django with:
+    - gunicorn
+    - psycopg2
+    - postgresql
+    - allAuth
+    - Crispy Forms
 
 # Proved By
 
@@ -65,11 +88,17 @@
 # Features
 
 - The first feature in this app is a .
-
+- Home Page Design
+- Website Footer
+- About Page
+- Internal Web Pages
+- Backend Admin
+- Logo
 
 # Future features
 
-* In the future I would like to add one more ...
+* In the future I would like to add story: As a site user I can view locations on the map so that I can visit centers.
+* To make carousel of Inspa people pictures using JavaScript.
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
 

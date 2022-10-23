@@ -7,7 +7,7 @@
 {% block content %}
 
 <div class="container-fluid row h-100">
-  <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
+  <div class="d-flex align-items-center justify-content-center col-md-8  mb-4 mt-3">
     <div class="d-flex align-items-center justify-content-center" id="circle-outerSignIn">
       <div id="circle-innerSignIn">
       </div>
@@ -18,33 +18,35 @@
   <div class="col-md-5 mb-4 mt-3">
     <h4>About Us</h4>
     <div class="card" id="about_us">
+      <div class="card col-md-12">
         <span class="row">
-            <img class="col-md-2 mt-3" src="../static/images/staff/doctorpic.jpeg" alt="Picture of the doctor" height="90px">
-            <p class="col-md-8 mt-3">
+            <img class="col-md-2 col-1 col-sm-1 col-sm-2 mt-3 img" src="../static/images/staff/doctorpic.jpeg" alt="Picture of the doctor">
+            <p class="col-md-8">
                 Dr. Ronan O'brien
                 Got his degree in 2013. Started to work in YouthClub at 2015. Got awards for "Creating A Better World".
             </p>
         </span>
       <hr>
       <span class="row">
-        <img class="col-md-2 mt-3" src="../static/images/staff/drpi.jpeg" alt="Picture of the doctor" height="90px">
-        <p class="col-md-8 mt-3">
+        <img class="col-md-2 col-1 col-sm-1 img" src="../static/images/staff/drpi.jpeg" alt="Picture of the doctor">
+        <p class="col-md-8">
            Dr. Marcus Martins
            Got his degree in 2010. Started to work in YouthClub at 2019. Previously worked in HSE.
         </p>
     </span>
       <hr>
       <span class="row">
-        <img class="col-md-2 mt-3" src="../static/images/staff/docpic.jpeg" alt="Picture of the doctor" height="90px">
-        <p class="col-md-8 mt-3">
+        <img class="col-md-2 col-1 col-sm-1 mt-3 img img-responsive" src="../static/images/staff/docpic.jpeg" alt="Picture of the doctor">
+        <p class="col-md-8">
             Dr. Charlotte McDonald
             Got her degree in 2012. Started to work in YouthClub at 2020. Was envolved in cahrities like "Helping Kids With Disabilities", "Run For Lilly" and many more. 
         </p>
     </span>
     </div>
+  </div>
     {% load crispy_forms_tags %}
     <!-- Usful links for short speaches -->
-    <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
+    <div class="h-25 w-100 col-md-1 card mb-4 mt-3" id="tip_types">
       <h4>Useful links:</h4>
       {% csrf_token %}
           <li class="buttontype"><a  target="_blank" href="https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder/overview/">Anxiety</a>&nbsp &raquo;</li>
