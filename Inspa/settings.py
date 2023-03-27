@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['inspasite.herokuapp.com', 'localhost']
 CSRF_TRUSTED_ORIGINS = [
@@ -158,10 +158,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-CLOUDINARY_URL = [os.environ.get('CLOUDINARY_URL')]
+CLOUDINARY_URL = 'cloudinary://453153869432639:QXGzbcHkKGtsMtFSRtUN2X1G83k@dtgfvro3p'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'cloudinary://453153869432639:QXGzbcHkKGtsMtFSRtUN2X1G83k@dtgfvro3p',
+    'CLOUD_NAME': 'dtgfvro3p',
     'API_KEY': '453153869432639',
     'API_SECRET': 'QXGzbcHkKGtsMtFSRtUN2X1G83k',
 }
