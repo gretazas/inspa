@@ -18,4 +18,3 @@ class AddpostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'type', 'content')
 
-

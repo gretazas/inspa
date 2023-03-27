@@ -85,6 +85,18 @@
             </form>
         {% endif %}
 
+        <!-- Message after post -->
+        {% if posted %}
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p>You successful post.</p>
+            <hr>
+        </div>
+        <div class="alert alert-success" role="alert">
+            Your post is awaiting approval
+        </div>
+        {% endif %}
+
         {% for post in post_list %}
 
         <div id="posts">

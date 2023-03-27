@@ -15,9 +15,9 @@ class PostAdmin(SummernoteModelAdmin):
 
 
 @admin.register(Comment)
-class Comment(admin.ModelAdmin):
+class CommentAdmin(admin.ModelAdmin):
     ''' Post comment '''
-    list_display = ('name', 'body', 'post', 'created_on', 'approved')
+    list_display = ('body', 'name', 'post', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
     actions = ['approve_comments']
@@ -25,5 +25,6 @@ class Comment(admin.ModelAdmin):
     def approve_comments(self, queryset):
         ''' Comment aproval status '''
         queryset.update(approved=True)
+
 
 
