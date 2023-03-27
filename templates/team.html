@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
@@ -20,7 +22,7 @@
     <div class="card" id="about_us">
       <div class="card col-md-12">
         <span class="row">
-            <img class="col-md-2 col-1 col-sm-1 col-sm-2 mt-3 img" src="../static/images/staff/doctorpic.jpeg" alt="Picture of the doctor">
+            <img class="col-md-2 col-1 col-sm-1 col-sm-2 mt-3 img" src="{% static 'images/staff/doctorpic.jpeg' %}" alt="Picture of the doctor">
             <p class="col-md-8">
                 Dr. Ronan O'brien
                 Got his degree in 2013. Started to work in YouthClub at 2015. Got awards for "Creating A Better World".
@@ -28,7 +30,7 @@
         </span>
       <hr>
       <span class="row">
-        <img class="col-md-2 col-1 col-sm-1 img" src="../static/images/staff/drpi.jpeg" alt="Picture of the doctor">
+        <img class="col-md-2 col-1 col-sm-1 img" src="{% static 'images/staff/drpi.jpeg' %}" alt="Picture of the doctor">
         <p class="col-md-8">
            Dr. Marcus Martins
            Got his degree in 2010. Started to work in YouthClub at 2019. Previously worked in HSE.
@@ -36,7 +38,7 @@
     </span>
       <hr>
       <span class="row">
-        <img class="col-md-2 col-1 col-sm-1 mt-3 img img-responsive" src="../static/images/staff/docpic.jpeg" alt="Picture of the doctor">
+        <img class="col-md-2 col-1 col-sm-1 mt-3 img img-responsive" src="{% static 'images/staff/docpic.jpeg' %}" alt="Picture of the doctor">
         <p class="col-md-8">
             Dr. Charlotte McDonald
             Got her degree in 2012. Started to work in YouthClub at 2020. Was envolved in cahrities like "Helping Kids With Disabilities", "Run For Lilly" and many more. 
