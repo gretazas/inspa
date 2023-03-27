@@ -11,11 +11,7 @@
 <a href="https://github.com/gretazas/inspa">https://github.com/gretazas/inspa</a>
 
 <p align="center">
-<<<<<<< HEAD
-<img width="250" height="250" src="../inspa/static/images/agile/circle.jpg" alt="Green inspirational circle">
-=======
 <img style="border-radius:50%" width="250" height="250" src="../inspa/static/images/agile/circle.jpg" alt="Green inspirational circle"/>
->>>>>>> 3005a82 (go through responsive design changes)
 </p>
 
 # Acknowledgements
@@ -153,6 +149,12 @@ I have manually tested this project by doing the following:
 - Passed the code through a PEP8 linter and confirmed there are no problems.
 - Given invalid inputs: strings when numbers are expected.
 
+## css validator
+
+<p align="center">
+<img width="350" height="250" src="../inspa/static/images/agile/cssvalidatos.jpg" alt="cssvalidator"/>
+</p>
+
 # Code
 
 Inspiration for the project came from my daughter. Hope website would be helpful to some one.
@@ -163,7 +165,7 @@ Inspiration for the project came from my daughter. Hope website would be helpful
 
 # Issues and bugs
 
-* ... 
+* I came back to my project after good while after I`ve started it and had to reinstal all instalations and set Herolu dynos and postgres, caused alot of issues.
 <br>
 
 <p align="right">(<a href="#top">Back to top</a>)</p>

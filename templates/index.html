@@ -10,7 +10,7 @@
                 {% if user.is_authenticated %}
                 {% load crispy_forms_tags %}
                 <!-- Random post content lies here-->
-                 <a href="{% url 'post_detail' slug=random_post.slug %}" class="post d-flex align-items-end">
+                <a href="{% url 'post_detail' slug=random_post.slug %}" class="post d-flex align-items-end">
                     <p class="card-text" id="random_post">
                         {{ random_post.content | safe }} &raquo;
                     </p>
