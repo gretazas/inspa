@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container-fluid row h-100">
-    <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
+    <div class="d-flex align-items-center justify-content-center col-lg-7 col-md-6 mb-4 mt-3">
         <div class="d-flex align-items-center justify-content-center circle-outer" id="circle-outer">
             <div class="post" id="circle-inner">
                 {% csrf_token %}
@@ -20,14 +20,14 @@
         </div>
     </div> 
     
-    <div class="col-md-5 mb-4 mt-3">
+    <div class="col-md-6 col-lg-5 mb-4 mt-3">
         <h4>Inspas</h4>
         <div class="card d-block posts">
             {% load crispy_forms_tags %}
             {% csrf_token %}
             {% for post in post_list %}
             <div class="post">
-                <div class="card  body g-0">
+                <div class="card body g-0">
                     <!-- Post content lies here-->
                         <div class="roundpostup card-text d-flex align-items-end">
                             <p>
@@ -46,13 +46,27 @@
         </div>
         
         <!-- Types of the diff tips -->
-        <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="tip_types">
-            <h4>Tips of the day</h4>
-            {% csrf_token %}
-                <li class="buttontype"><a href="{% url 'posts' post_type='Health' %}">Health</a>&nbsp &raquo;</li>
-                <li class="buttontype"><a href="{% url 'posts' post_type='Wealth' %}">Wealth</a>&nbsp &raquo;</li>
-                <li class="buttontype" ><a href="{% url 'posts' post_type='Exercise' %}">Exercise</a>&nbsp &raquo;</li>
-                <li class="buttontype"><a href="{% url 'posts' post_type='Mindfulness' %}">Mindfulness</a>&nbsp &raquo;</li>
+        <div class="h-25 w-100 col-lg-7 col-md-6 card mb-4 mt-3" id="tip_types">
+            <div class="row justify-content-between">
+                <div class="col-lg-4 col-12 p-0" id="tips_of_day">
+                <h4>Tips of the day</h4>
+                {% csrf_token %}
+                    <li class="buttontype"><a href="{% url 'posts' post_type='Health' %}">Health</a>&nbsp &raquo;</li>
+                    <li class="buttontype"><a href="{% url 'posts' post_type='Wealth' %}">Wealth</a>&nbsp &raquo;</li>
+                    <li class="buttontype" ><a href="{% url 'posts' post_type='Exercise' %}">Exercise</a>&nbsp &raquo;</li>
+                    <li class="buttontype"><a href="{% url 'posts' post_type='Mindfulness' %}">Mindfulness</a>&nbsp &raquo;</li>
+                </div>
+                <div class="col-7 col-md-6 col-lg-7 p-0">
+                    <!-- Feedback form -->
+                    <div class="w-100 mb-lg-4" id="feedback">
+                        <h4>Feedback Form</h4>
+                        <form>
+                        <textarea class="form-control" type="text" placeholder="Share your feedback here"></textarea>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

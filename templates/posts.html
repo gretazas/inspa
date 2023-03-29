@@ -67,24 +67,23 @@
 <div id="posts">
     <div class="container-fluid d-flex row">
         <h4>Inspas</h4>
-        {% if user.is_authenticated %}
             <form method="POST">
-                <!-- Add post button -->
-                {% csrf_token %}
-                <div class="d-flex justify-content-md-center">
-                    <button class="addcomment">
-                        <a href="{% url 'add_post' %}">Add Post</a>
-                    </button>
-                </div>
-                {% else %}
-                <div class="announcement d-flex justify-content-md-center">
-                    <button class="announcebtn addcomment" data-slug="{{ post.type }}">
-                        Add Post
-                    </button>
-                </div>
-            </form>
-        {% endif %}
-
+            <!-- Add post button -->
+            {% csrf_token %}
+            <div class="d-flex justify-content-md-center">
+                <button class="addcomment">
+                    <a href="{% url 'add_post' %}">Add Post</a>
+                </button>
+            </div>
+            <!-- Message after log event -->
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class ="list-group-item list-group-item-warning" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
         <!-- Message after post -->
         {% if posted %}
         <div class="alert alert-success" role="alert">
@@ -112,27 +111,35 @@
                         {{ post.author }}
                     </p>
                 </div>
-                    
-                <div class="col-11">
                 {% if user.is_authenticated %}
+                <div class="col-11">
                 <!-- Comment if logged in -->
                     {% csrf_token %}
                     <button class="addcomment">
                         <a href="{% url 'post_detail' slug=post.slug %}">Comments</a>
                     </button>
-                    {% else %}
-                    <div class="announcement">
-                        <button class="announcebtn addcomment" data-slug="{{ post.slug }}">
-                            Comments
-                        </button>
-                    </div>
+                </div>
+                {% else %}
+                <div class="col-11">
+                    <!-- Comment if logged in -->
+                    {% csrf_token %}
+                    <button class="addcomment">
+                        <a href="{% url 'add_post' %}">Comments</a>
+                    </button>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li class ="list-group-item list-group-item-warning" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 {% endif %}
                 </div>
-                
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
 <script type="javascript" src="/static/script/script.js"></script>
+
 </body>

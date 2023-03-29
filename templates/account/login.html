@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<div class="container-fluid row h-100">
+<div class="container-fluid row h-100" id="signin-main">
 
   <div class="d-flex align-items-center justify-content-center col-md-7 mb-4 mt-3">
     <div class="d-flex align-items-center justify-content-center" id="circle-outerSignIn">
@@ -50,11 +50,15 @@
         In 2005 we opened another youth club in Galway. And day after day we grow stronger.
       </p>
     </div>
-    {% load crispy_forms_tags %}
-    <!-- Feedback form -->
-    <div class="card-text post">
-      <div class="h-25 w-100 col-md-5 card mb-4 mt-3" id="feedback">
-        
-  </div>
+     <!-- Footer -->
+
+    <footer class="d-flex justify-content-center mt-5">
+        <p class="m-0 text-center">
+            <i class="fab fa-facebook-square ms-5 fa-2x"></i>
+            <i class="fab fa-twitter-square ms-5 fa-2x"></i>
+            <i class="fab fa-instagram-square ms-5 fa-2x"></i>
+            <i class="fab fa-youtube-square ms-5 fa-2x"></i>
+        </p>
+    </footer>
 </div>
 {% endblock %}

@@ -290,6 +290,10 @@ form button {
 }
 
 /* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+}
 
 .fa-facebook-square:hover {
     color: #4267B2;
@@ -310,7 +314,191 @@ form button {
     color: #FF0000;
 }
 
-@media only screen and (max-width: 920px){
+/* Links with tips of the day base.html*/
+    #tips_of_day {
+        margin-left: 5px;
+    }
+
+    .navbar-collapse.in {
+        display: block !important;
+    }
+
+@media only screen and (max-width: 1235px){
+
+    #circle-inner {
+        height: 270px;
+        width: 270px;
+      }
    
+    .circle-outer:before {
+        height: 300px;
+        width: 300px;
+      }
+      
+    .circle-outer:after {
+        height: 270px;
+        width: 270px;
+      }
+    
+}
+
+@media only screen and (max-width: 1000px){
+    body {
+        height: 140%;
+    }
+
+    nav {
+        justify-content: start;
+    }
+
+    /* tip type links */
+    #tip_types {
+        height: 300px !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* circle in contact page */
+    #circle-innerContact {
+        height: 410px;
+        width: 410px;
+    }
+    
+    #circle-outerContact {
+        height: 450px;
+        width: 450px;
+    }
+
+    #contact {
+        margin: 20px
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    /* circle in contact page */
+    #circle-innerSignUp {
+        font-size: small;
+        height: 430px;
+        width: 430px;
+    }
+    
+    #circle-outerSignUp {
+        height: 450px;
+        width: 450px;
+    }
+
+}
+
+@media only screen and (max-width: 890px){
+    /* Main circles in landing page */
+
+    #circle-inner {
+        height: 220px;
+        width: 220px;
+      }
    
+      #circle-outer {
+        height: 240px;
+        width: 240px;
+      }
+
+    .circle-outer:before {
+        height: 250px;
+        width: 250px;
+      }
+      
+    .circle-outer:after {
+        height: 230px;
+        width: 230px;
+      }
+    
+    /* Content in circle in contact page */
+    #signup {
+        padding: 5px;
+    }
+
+    #container-fluid-signup {
+        justify-content: center;
+    }
+
+    /* Links with tips of the day base.html*/
+    #tips_of_day {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    body {
+        height: 220%;
+    }
+
+    /* Main circles in landing page */
+
+    #circle-inner {
+        height: 200px;
+        width: 200px;
+      }
+   
+      #circle-outer {
+        height: 230px;
+        width: 230px;
+      }
+
+    .circle-outer:before {
+        height: 230px;
+        width: 230px;
+      }
+      
+    .circle-outer:after {
+        height: 200px;
+        width: 200px;
+      }
+
+    /*  Contact page circles */
+    #circle-innerContact {
+        height: 350px;
+        width: 350px;
+    }
+    
+    #circle-outerContact {
+        height: 370px;
+        width: 370px;
+    }
+
+    /* Sign up page info */
+
+    #signup  {
+        margin-left: 80px;
+    }
+
+    /* Links with tips of the day base.html*/
+    #tips_of_day {
+        margin: 5px;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 475px){
+
+    /*  Contact page circles */
+    #circle-innerContact {
+        height: 270px;
+        width: 270px;
+    }
+    
+    #circle-outerContact {
+        height: 290px;
+        width: 290px;
+    }
+
+    #contact {
+        font-size: small;
+        padding: 25px;
+        margin: 25px;
+    }
+
+    #signin-main {
+        height: 800px !important;
+    }
 }

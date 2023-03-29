@@ -108,17 +108,21 @@ class PostDetail(View):
 class Addpost(View):
     ''' Add post '''
     model = Post
-    template_name = "add_post.html"
     fields = ('title', 'status', 'slug', 'author', 'type', 'content')
 
     def get(self, request):
-        form = AddpostForm(data=request.POST)
-        return render(
-            request, "add_post.html",
-            {
-                "form": form,
-            },
-        )
+        '''Render form to add post '''
+        if request.user.is_authenticated:
+            form = AddpostForm(data=request.POST)
+            context = {"form": form}
+            return render(
+                request, "add_post.html", context)
+        else:
+            messages.warning(request, 'You must be logged in to procced')
+            context = {}
+            return render(
+                request, "posts.html", context
+            )
 
     def post(self, request, *args, **kwargs):
         ''' Comments attached to posts '''
