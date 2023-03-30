@@ -5,12 +5,13 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
-from .forms import CommentForm, AddpostForm
-from .models import Post, Comment
+from .forms import CommentForm, AddpostForm, FeedbackForm
+from .models import Post, Comment, Feedback
 from django.contrib import messages
 from datetime import datetime as d
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from django.views.decorators.http import require_http_methods
 
 
 class HomePage(generic.ListView):
@@ -27,13 +28,37 @@ class HomePage(generic.ListView):
         ''' Ger random post if size not bigger than 200 char'''
         context = super(HomePage, self).get_context_data(**kwargs)
         context['random_post'] = self.random_post
+        context['feedback_form'] = FeedbackForm()
 
         if sys.getsizeof(self.random_post) < 48.4:
             return context
         else:
-            return HomePage()
+            return render(self.request, self.template_name, context)
 
-        return render("index.html", context)
+        return render(self.request, self.template_name, context)
+
+
+class FeedbackView(View):
+    '''Get feedback'''
+    model = Feedback
+    template_name = "feedback.html"
+
+    def post(self, request):
+        '''Get feedback'''
+        feedback_form = FeedbackForm(data=request.POST)
+        context = {}
+        if request.method == 'POST':
+            feedback_form.instance.email = request.user.email
+            feedbacks = Feedback.objects.all()
+            for feedback in feedbacks:
+                if feedback_form.is_valid():
+                    print('No errors')
+                    print('ERRORS:', feedback_form.errors)
+                    feedback_form.save()
+                    feedback.save()
+                    print(Feedback.objects.all())
+                    context['success_message'] = 'Thank you for your feedback!'
+        return render(request, "feedback.html", {'feedback_form': feedback_form})
 
 
 class PostsList(generic.ListView):
@@ -124,7 +149,7 @@ class Addpost(View):
                 request, "posts.html", context
             )
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         ''' Comments attached to posts '''
         form = AddpostForm(data=request.POST)
         if request.method == 'POST':
@@ -169,3 +194,4 @@ class Contact(View):
     def get(self, request):
         ''' Team.html '''
         return render(request, "contact.html")
+

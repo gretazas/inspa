@@ -1,7 +1,7 @@
 ''' Imports '''
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Post, Comment
+from .models import Post, Comment, Feedback
 
 
 @admin.register(Post)
@@ -27,4 +27,7 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
 
-
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    ''' Post comment '''
+    list_display = ('body', 'email', 'created_on')

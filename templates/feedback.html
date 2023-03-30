@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="card-body col d-flex m-4 p-4" style="flex-direction: column;">
+    <h2>Thank you for your feedback!</h2>
+    <a class="navbar-brand row  m-4 p-4" href="{% url 'home' %}">Back to main Inspa page</a><br>
+    <div class="d-flex row align-items-center justify-content-center col-lg-7 col-md-6 m-4 p-4">
+        <div class="d-flex align-items-center justify-content-center circle-outer" id="circle-outer">
+            <div class="post" id="circle-inner">
+            </div>
+        </div>
+    </div> 
+        <div class="row p-0" id="tips_of_day">
+        <h4>Tips of the day</h4>
+        {% csrf_token %}
+            <li class="buttontype"><a href="{% url 'posts' post_type='Health' %}">Health</a>&nbsp &raquo;</li>
+            <li class="buttontype"><a href="{% url 'posts' post_type='Wealth' %}">Wealth</a>&nbsp &raquo;</li>
+            <li class="buttontype" ><a href="{% url 'posts' post_type='Exercise' %}">Exercise</a>&nbsp &raquo;</li>
+            <li class="buttontype"><a href="{% url 'posts' post_type='Mindfulness' %}">Mindfulness</a>&nbsp &raquo;</li>
+        </div>
+</div>
+{% endblock %}

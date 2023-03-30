@@ -60,3 +60,12 @@ class Comment(models.Model):
         return f"Comment { self.body } by { self.name }"
 
 
+class Feedback(models.Model):
+    '''Feedback'''
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ''' Meta '''
+        ordering = ['created_on']

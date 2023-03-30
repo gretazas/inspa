@@ -90,15 +90,15 @@
                     </div>
 
                     {% else %}
-                    {% if user.is_authenticated %}
+                        {% if user.is_authenticated %}
 
-                    <h3>Leave a comment:</h3>
-                    <form id="commentform" method="post" style="margin-top: 1.3em;">
-                        {% csrf_token %}
-                        {{ comment_form }}
-                        <button type="submit" id="commentbtn" class="btn btn-signup btn-lg">Submit</button>
-                    </form>
-                    {% endif %}
+                        <h3>Leave a comment:</h3>
+                        <form id="commentform" method="POST" style="margin-top: 1.3em;">
+                            {% csrf_token %}
+                            {{ comment_form }}
+                            <button type="submit" id="commentbtn" class="btn btn-signup btn-lg">Submit</button>
+                        </form>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
