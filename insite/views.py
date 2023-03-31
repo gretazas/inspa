@@ -64,7 +64,7 @@ class FeedbackView(View):
 class PostsList(generic.ListView):
     ''' Different types of posts in posts.html'''
     model = Post
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(status=1)
     template_name = "posts.html"
 
     def get_queryset(self):
@@ -160,6 +160,21 @@ class Addpost(View):
                 form.instance.slug = slugify(form.instance.title)
                 form.instance.created_on = d.now()
                 addpost = form.save(commit=False)
+                addpost.status = 0
+                title_words = addpost.title.split()
+                # Capitalize the post
+                content_words = addpost.content.split()
+                if content_words:
+                    first_word = content_words[0]
+                    first_word = first_word[0].capitalize() + first_word[1:]
+                    addpost.content = first_word + ' '.join(content_words[1:])
+                # Capitalize the title for admin
+                if title_words:
+                    first_word = title_words[0]
+                    first_word = first_word[0].capitalize() + first_word[1:]
+                    addpost.title = first_word + ' '.join(title_words[1:])
+                else:
+                    addpost.title = addpost.title.capitalize()
                 addpost.save()
             context = {'posted': True}
         else:

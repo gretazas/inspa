@@ -133,19 +133,8 @@
                         {% endfor %}
                     </ul>
                     {% endif %}
+                </div>
                 {% endif %}
-                </div>
-                <div class="col-7 col-md-6 col-lg-7 p-0">
-                    <!-- Feedback form -->
-                    <div class="w-100 mb-lg-4" id="feedback">
-                        <h4>Feedback Form</h4>
-                        <form method="POST" action="{% url 'feedback' %}">
-                            {% csrf_token %}
-                            {{ feedback_form.as_p }}
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
         {% endfor %}
