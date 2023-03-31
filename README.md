@@ -155,6 +155,12 @@ I have manually tested this project by doing the following:
 <img width="350" height="250" src="../inspa/static/images/agile/cssvalidatos.jpg" alt="cssvalidator"/>
 </p>
 
+## manual testing
+
+- Responsive design, using iphone8 mobile:
+    - Go through the pages using navigation bar, writing down issues found
+    - Making sure the circle is resizing while going to smaller screen sizes.
+
 # Code
 
 Inspiration for the project came from my daughter. Hope website would be helpful to some one.
