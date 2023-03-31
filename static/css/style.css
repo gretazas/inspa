@@ -413,27 +413,6 @@ footer {
 }
 
 @media only screen and (max-width: 890px){
-    /* Main circles in landing page */
-
-    #circle-inner {
-        height: 220px;
-        width: 220px;
-      }
-   
-      #circle-outer {
-        height: 240px;
-        width: 240px;
-      }
-
-    .circle-outer:before {
-        height: 250px;
-        width: 250px;
-      }
-      
-    .circle-outer:after {
-        height: 230px;
-        width: 230px;
-      }
     
     /* Content in circle in contact page */
     #signup {
@@ -459,23 +438,23 @@ footer {
     /* Main circles in landing page */
 
     #circle-inner {
-        height: 200px;
-        width: 200px;
+        height: 160px;
+        width: 160px;
       }
    
       #circle-outer {
-        height: 230px;
-        width: 230px;
+        height: 180px;
+        width: 180px;
       }
 
     .circle-outer:before {
-        height: 230px;
-        width: 230px;
+        height: 180px;
+        width: 180px;
       }
       
     .circle-outer:after {
-        height: 200px;
-        width: 200px;
+        height: 160px;
+        width: 160px;
       }
 
     /*  Contact page circles */
