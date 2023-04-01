@@ -163,3 +163,11 @@ CLOUDINARY_STORAGE = {
     'API_KEY': '453153869432639',
     'API_SECRET': 'QXGzbcHkKGtsMtFSRtUN2X1G83k',
 }
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
