@@ -170,7 +170,7 @@ The site was deployed to Github pages using the following steps:
 ## html validator
 
 - It shown id="author" dublicated ID, but find in files showns only one, seen in pic provided.<br>
-- Same with closing `</p>`, `</a>` tags, looked through all tags with find in files, for few times, not found. Also made suse the wasn\`t like `<a` or `<p` before `</a> ` or `</p>` alo made sure, that it doent contain not allowed tags inside those error marked tags. <br>
+- Same with closing `</p>`, `</a>` tags, looked through all tags with find in files, for few times, not found. Also made suse the wasn\`t like `<a` or `<p` before `</a> ` or `</p>` alo made sure, that it doent contain not allowed tags inside those error marked tags. Eventually `</a>` tag error disapeared, havnt change any tags. <br>
 <img width="450" height="350" src="../inspa/static/images/agile/Screenshot(495).png " alt="htmlvalidator"/><br>
 <img width="450" height="350" src="../inspa/static/images/agile/Screenshot(496).png " alt="htmlvalidator"/><br>
 
@@ -180,8 +180,14 @@ The site was deployed to Github pages using the following steps:
 <img width="480" height="350" src="../inspa/static/images/agile/Screenshot(500).png " alt="lighthouse"/><br>
 <img width="480" height="350" src="../inspa/static/images/agile/Screenshot(501).png " alt="lighthouse"/><br>
 
+## Am I responsive
 
-## manual testing
+Issues trying to get responsive design pictures:
+
+<img width="480" height="350" src="../inspa/static/images/agile/Screenshot(502).png " alt="responsive"/><br>
+<img width="480" height="350" src="../inspa/static/images/agile/Screenshot(503).png " alt="responsive"/><br>
+
+## Manual testing
 
 - Responsive design, using iphone8 mobile:
     - Go through the pages using navigation bar, writing down issues found
@@ -194,7 +200,7 @@ The site was deployed to Github pages using the following steps:
 
 # Code
 
-Inspiration for the project came from my daughter. Hope website would be helpful to some one.
+Inspiration for the project came from my daughter. She has anxiety. Hope website would be helpful to many people.
 
 **[Code explained in detail](./functions.md)**
 
