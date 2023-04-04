@@ -154,12 +154,6 @@ The site was deployed to Github pages using the following steps:
 
 # Testing
 
-I have manually tested this project by doing the following:
-- Passed the code through a PEP8 linter and confirmed there are no problems.
-- Given invalid inputs: strings when numbers are expected. Feedback email must be correct form. registration form must be correct. To post a post must fill all required form inputs. for comment email must be legit.
-- Press buttons, make usre they work. Submit feedback form, post, comment, add cmment in post detail page, login, register, logput. Browse throug nav, footer, sign out page links.
-- Add post as a member, and try to add post as a user(get message:  must be logged in to proceed), same with comment button in posts page.
-
 ## css validator
 
 <p align="center">
@@ -176,15 +170,27 @@ I have manually tested this project by doing the following:
 ## html validator
 
 - It shown id="author" dublicated ID, but find in files showns only one, seen in pic provided.<br>
-- Same with closing `</p>`, `</a>` tags, looked through all tags with find in files, for few times, not found. Also made suse the wasn\`t like `<a` or `<p` before `</a> ` or `</p>`<br>
+- Same with closing `</p>`, `</a>` tags, looked through all tags with find in files, for few times, not found. Also made suse the wasn\`t like `<a` or `<p` before `</a> ` or `</p>` alo made sure, that it doent contain not allowed tags inside those error marked tags. <br>
 <img width="450" height="350" src="../inspa/static/images/agile/Screenshot(495).png " alt="htmlvalidator"/><br>
 <img width="450" height="350" src="../inspa/static/images/agile/Screenshot(496).png " alt="htmlvalidator"/><br>
+
+## lighthouse
+
+<img width="480" height="350" src="../inspa/static/images/agile/Screenshot(499).png " alt="lighthouse"/><br>
+<img width="480" height="350" src="../inspa/static/images/agile/Screenshot(500).png " alt="lighthouse"/><br>
+<img width="480" height="350" src="../inspa/static/images/agile/Screenshot(501).png " alt="lighthouse"/><br>
+
 
 ## manual testing
 
 - Responsive design, using iphone8 mobile:
     - Go through the pages using navigation bar, writing down issues found
     - Making sure the circle is resizing while going to smaller screen sizes.
+- I have manually tested this project by doing the following:
+- Passed the code through a PEP8 linter and confirmed there are no problems.
+- Given invalid inputs: strings when numbers are expected. Feedback email must be correct form. registration form must be correct. To post a post must fill all required form inputs. for comment email must be legit.
+- Press buttons, make usre they work. Submit feedback form, post, comment, add cmment in post detail page, login, register, logput. Browse throug nav, footer, sign out page links.
+- Add post as a member, and try to add post as a user(get message:  must be logged in to proceed), same with comment button in posts page.
 
 # Code
 
