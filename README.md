@@ -43,7 +43,11 @@
 
 # Built to inspire
 
-- Inspa circle is meant to inspire for greater things in life. To spin great ideas.
+Inspa circle is meant to inspire for greater things in life. To spin great ideas. To help people with anxiety, weightloss, earning extra money, become more healthy. Sometimes we discover things by accident, it would be great if we instatnly could share them with the world Inspa is a platform for sharing and discussing posts related to health, wealth, exercise, and mindfulness. The platform allows users to create and view posts, comment on them, and like them. 
+
+# Getting Started as a user
+
+To get started with Inspa, best way is  to create an account. Once you've created an account, you can start creating posts. To create a post, simply click on the "Add Post" button and enter your post details. To create a comment, simply click on the "Comment" button and in post_detail page you can read all particular post comments, see counts o likes and add your own comment. You would recieve in your random post of the day in your landing page inspa circle. Sure if you dont want to register you account with website, you are still very welcome to give us feedback, read all the posts and visit useful links provided. 
 
 # User stories
 
@@ -54,6 +58,7 @@
 - As a site member I can comment on the posts so that could communicate.
 - As a site user I can read posts so that could get ideas and inspiration.
 - As a site member I can receive Inspa so that I would get inspiration and wisdom.
+- As a site user I can give feedback.
 - As a site user I can see inspirational people's names and their descriptions so that I learn about Inspa people.
 - As a site user I can view info so that I can contact the company.
 - As a site user I can use links so that I can get Inspired by famous speeches.
@@ -83,10 +88,14 @@
 
 # Features
 
-- The first feature in this app is a .
+- Create and view posts on health, wealth, exercise, and mindfulness
+- Comment on posts to start a discussion
+- Like posts to show your support
+- The Inspa circle with random post o the day.
 - Home Page Design
-- Website Footer
+- Website Footer for information
 - About Page
+- Page with team members
 - Internal Web Pages
 - Backend Admin
 - Logo
