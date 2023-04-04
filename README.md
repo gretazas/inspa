@@ -173,7 +173,7 @@ Inspiration for the project came from my daughter. Hope website would be helpful
 
 * I came back to my project after good while after I`ve started it and had to reinstal all instalations and set Herolu dynos and postgres, caused alot of issues.
 * Using feed back in index.html used to get  errorMethod Not Allowed (GET): /feedback/, but no error in the form. Fixed with feedback_form.instance.email = request.user.email.
-* 
+* Couldnt hide email field for authenticated users in feedback form. Tired to add self.fields['email'].widget = forms.HiddenInput() in def __init__(self, *args, **kwargs) function.
 <br>
 
 <p align="right">(<a href="#top">Back to top</a>)</p>

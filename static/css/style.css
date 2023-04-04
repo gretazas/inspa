@@ -543,6 +543,17 @@ footer {
 }
 
 @media only screen and (max-width: 575px){
+/*  Contact page circles */
+    #circle-innerSignIn {
+        height: 270px;
+        width: 270px;
+    }
+    
+    #circle-outerSignIn {
+        height: 290px;
+        width: 290px;
+    }
+
     footer {
         position: absolute;
         padding: 0;
