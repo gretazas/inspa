@@ -21,8 +21,8 @@
     </div> 
     
     <div class="col-md-6 col-lg-5 mb-4 mt-3">
-        <h4>Inspas</h4>
-        <div class="card d-block posts">
+        <h4 class="d-none d-md-block d-lg-block ">Inspas</h4>
+        <div class="d-none d-md-inline-block d-lg-inline-block card posts">
             {% load crispy_forms_tags %}
             {% csrf_token %}
             {% for post in post_list %}
