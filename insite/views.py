@@ -52,11 +52,8 @@ class FeedbackView(View):
             feedbacks = Feedback.objects.all()
             for feedback in feedbacks:
                 if feedback_form.is_valid():
-                    print('No errors')
-                    print('ERRORS:', feedback_form.errors)
                     feedback_form.save()
                     feedback.save()
-                    print(Feedback.objects.all())
                     context['success_message'] = 'Thank you for your feedback!'
         return render(request, "feedback.html", {'feedback_form': feedback_form})
 

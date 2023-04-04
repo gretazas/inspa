@@ -24,7 +24,7 @@ class FeedbackForm(forms.ModelForm):
     class Meta:
         ''' Meta '''
         model = Feedback
-        fields = ('body',)
+        fields = ('email', 'body',)
         widgets = {
-                'body': forms.Textarea(attrs={'rows': 3, 'cols': 35, 'class': 'feedback-form'})
+                'body': forms.Textarea(attrs={'rows': 2, 'cols': 35, 'class': 'feedback-form'})
         }

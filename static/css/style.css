@@ -330,8 +330,9 @@ footer {
         display: block !important;
     }
 
-/* Feedback form body width */
+
 @media only screen and (max-width: 1620px){
+    /* Feedback form body width */
     #id_body {
         width: 80%  !important;
       }
@@ -342,6 +343,10 @@ footer {
     #id_body {
         width: 240px !important;
       }
+
+    footer {
+        align-items: flex-end;
+    }
 }
 
 @media only screen and (max-width: 1235px){
@@ -366,6 +371,9 @@ footer {
         width: 270px;
       }
     
+      footer {
+        margin-top: 5rem;;
+      }
 }
 
 @media only screen and (max-width: 1100px){
@@ -528,6 +536,10 @@ footer {
         margin: auto !important;
         padding: 0 !important;
     }
+
+    footer {
+        margin-top: 1rem;;
+      }
 }
 
 @media only screen and (max-width: 575px){
