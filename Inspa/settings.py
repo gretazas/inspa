@@ -30,11 +30,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['inspasite.herokuapp.com', 'localhost']
 CSRF_TRUSTED_ORIGINS = [
                 'https://8000-gretazas-inspa-v7n3bwggcss.ws-eu93.gitpod.io',
+                'https://8001-gretazas-inspa-v7n3bwggcss.ws-eu93.gitpod.io',
                 'https://*.*.gitpod.io', 'http://127.0.0.1:8000/',
                 'http://127.0.0.1:800o/'
                         ]

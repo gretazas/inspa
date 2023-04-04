@@ -20,14 +20,14 @@
         </div>
     </div> 
     
-    <div class="col-md-6 col-lg-5 mb-4 mt-3">
-        <h4 class="d-none d-md-block d-lg-block ">Inspas</h4>
-        <div class="d-none d-md-inline-block d-lg-inline-block card posts">
+    <div class="col-md-6 col-lg-5 mb-4 mt-3 d-flex flex-column">
+        <h4 class="d-none d-sm-block d-md-block d-lg-block ">Inspas</h4>
+        <div class="d-none d-sm-block d-md-flex d-lg-flex flex-grow-1 card posts"  id="index_posts">
             {% load crispy_forms_tags %}
             {% csrf_token %}
             {% for post in post_list %}
             <div class="post">
-                <div class="card body g-0">
+                <div class="card g-0">
                     <!-- Post content lies here-->
                         <div class="roundpostup card-text d-flex align-items-end">
                             <p>
@@ -46,7 +46,7 @@
         </div>
         
         <!-- Types of the diff tips -->
-        <div class="h-25 w-100 col-lg-7 col-md-6 card mb-4 mt-3" id="tip_types">
+        <div class="h-50 w-100 col-lg-7 col-md-6 card-body mb-4 mt-3" id="tip_types">
             <div class="row justify-content-between">
                 <div class="col-lg-4 col-12 p-0" id="tips_of_day">
                 <h4>Tips of the day</h4>
