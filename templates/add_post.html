@@ -1,12 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
-
+{% if user.is_authenticated %}
 <div class="col-md-8 card mb-4  mt-3 "></div>
     <div class="card-body">
         <h3>Add post here...</h3>
         <p>Posting as: {{ user.username }}</p>
-
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
@@ -26,4 +25,39 @@
         {% endif %}
     </div>
 </div>
+{% else %}
+{% if messages %}
+ <ul class="messages">
+     {% for message in messages %}
+         <li class ="list-group-item list-group-item-warning" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+     {% endfor %}
+ </ul>
+ {% endif %}
+    {% csrf_token %}
+<div class="card m-5 p-5">
+    <div class="card-body  m-5 p-5" id="go_to_login">
+        <button id="signInbtn" class="btn-small">
+            <a class="nav-link" href="{% url 'account_login' %}">Go to Login</a>
+        </button>
+        <button id="signInbtn" class="btn-small">
+            <a class="nav-link" href="{% url 'account_signup' %}">Go to Register</a>
+        </button>
+    </div> 
+
+
+    <!-- Types of the diff tips -->
+    <div class="h-50 w-100 col-lg-7 col-md-6 card-body mb-4 mt-3" id="tip_types">
+        <div class="row justify-content-between">
+            <div class="col-lg-4 col-12 p-0" id="tips_of_day">
+            <h4>Tips of the day</h4>
+            {% csrf_token %}
+                <li class="buttontype"><a href="{% url 'posts' post_type='Health' %}">Health</a>&nbsp &raquo;</li>
+                <li class="buttontype"><a href="{% url 'posts' post_type='Wealth' %}">Wealth</a>&nbsp &raquo;</li>
+                <li class="buttontype" ><a href="{% url 'posts' post_type='Exercise' %}">Exercise</a>&nbsp &raquo;</li>
+                <li class="buttontype"><a href="{% url 'posts' post_type='Mindfulness' %}">Mindfulness</a>&nbsp &raquo;</li>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endblock content %}

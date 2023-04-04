@@ -11,10 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from django.core.wsgi import get_wsgi_application
-from django.contrib.messages import constants as messages
 import os
-import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
 

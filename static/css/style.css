@@ -338,13 +338,19 @@ footer {
 }
 
 @media only screen and (max-width: 1500px){
+    /* Text area of feedback form */
     #id_body {
-        width: 70%  !important;
+        width: 240px !important;
       }
 }
 
 @media only screen and (max-width: 1235px){
+    /* Text area of feedback form */
+    #id_body {
+        width: 240px !important;
+      }
 
+    /* Inspa circles */
     #circle-inner {
         height: 270px;
         width: 270px;
@@ -401,7 +407,7 @@ footer {
 }
 
 @media only screen and (max-width: 1000px){
-
+    /* Posts in index.html */
     #index_posts {
         min-height: 80%;
     }
@@ -466,7 +472,7 @@ footer {
 }
 
 @media only screen and (max-width: 768px){
-
+    /* Post`s div in index  */
     #index_posts {
         min-height: 50%;
     }
@@ -516,6 +522,12 @@ footer {
         margin: 5px;
         padding: 5px;
     }
+
+    /* In add_post page if user is not authenticated*/
+    #go_to_login {
+        margin: auto !important;
+        padding: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 575px){
@@ -523,6 +535,11 @@ footer {
         position: absolute;
         padding: 0;
       }
+
+    /* In add_post page if user is not authenticated*/
+    #go_to_login button {
+        margin: 1rem !important;
+    }
 }
 
 @media only screen and (max-width: 475px){

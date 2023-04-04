@@ -146,7 +146,7 @@ class Addpost(View):
             messages.warning(request, 'You must be logged in to procced')
             context = {}
             return render(
-                request, "posts.html", context
+                request, "add_post.html", context
             )
 
     def post(self, request):
