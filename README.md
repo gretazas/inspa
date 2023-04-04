@@ -156,13 +156,29 @@ The site was deployed to Github pages using the following steps:
 
 I have manually tested this project by doing the following:
 - Passed the code through a PEP8 linter and confirmed there are no problems.
-- Given invalid inputs: strings when numbers are expected.
+- Given invalid inputs: strings when numbers are expected. Feedback email must be correct form. registration form must be correct. To post a post must fill all required form inputs. for comment email must be legit.
+- Press buttons, make usre they work. Submit feedback form, post, comment, add cmment in post detail page, login, register, logput. Browse throug nav, footer, sign out page links.
+- Add post as a member, and try to add post as a user(get message:  must be logged in to proceed), same with comment button in posts page.
 
 ## css validator
 
 <p align="center">
-<img width="350" height="250" src="../inspa/static/images/agile/cssvalidatos.jpg" alt="cssvalidator"/>
+<img width="450" height="350" src="../inspa/static/images/agile/cssvalidatos.jpg" alt="cssvalidator"/>
 </p>
+<p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
+## html validator
+
+- It shown id="author" dublicated ID, but find in files showns only one, seen in pic provided.<br>
+- Same with closing `</p>`, `</a>` tags, looked through all tags with find in files, for few times, not found. Also made suse the wasn\`t like `<a` or `<p` before `</a> ` or `</p>`<br>
+<img width="450" height="350" src="../inspa/static/images/agile/Screenshot(495).png " alt="htmlvalidator"/><br>
+<img width="450" height="350" src="../inspa/static/images/agile/Screenshot(496).png " alt="htmlvalidator"/><br>
 
 ## manual testing
 

@@ -39,7 +39,6 @@
                                 {{ post.author }}
                             </p>
                         </div>
-                    </a>
                 </div>
             </div>
             {% endfor %}
@@ -51,10 +50,12 @@
                 <div class="col-lg-4 col-12 p-0" id="tips_of_day">
                 <h4>Tips of the day</h4>
                 {% csrf_token %}
-                    <li class="buttontype"><a href="{% url 'posts' post_type='Health' %}">Health</a>&nbsp &raquo;</li>
-                    <li class="buttontype"><a href="{% url 'posts' post_type='Wealth' %}">Wealth</a>&nbsp &raquo;</li>
-                    <li class="buttontype" ><a href="{% url 'posts' post_type='Exercise' %}">Exercise</a>&nbsp &raquo;</li>
-                    <li class="buttontype"><a href="{% url 'posts' post_type='Mindfulness' %}">Mindfulness</a>&nbsp &raquo;</li>
+                <ul>
+                    <li class="buttontype"><a href="{% url 'posts' post_type='Health' %}">Health</a>&nbsp; &raquo;</li>
+                    <li class="buttontype"><a href="{% url 'posts' post_type='Wealth' %}">Wealth</a>&nbsp; &raquo;</li>
+                    <li class="buttontype" ><a href="{% url 'posts' post_type='Exercise' %}">Exercise</a>&nbsp; &raquo;</li>
+                    <li class="buttontype"><a href="{% url 'posts' post_type='Mindfulness' %}">Mindfulness</a>&nbsp; &raquo;</li>
+                </ul>
                 </div>
                 <div class="col-7 col-md-6 col-lg-7 p-0">
                     <!-- Feedback form -->

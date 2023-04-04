@@ -140,7 +140,7 @@ class Addpost(View):
             return render(
                 request, "add_post.html", context)
         else:
-            messages.warning(request, 'You must be logged in to procced')
+            messages.warning(request, 'You must be logged in to proceed')
             context = {}
             return render(
                 request, "add_post.html", context

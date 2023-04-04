@@ -11,8 +11,8 @@ buttons.forEach(button => {
           <div class="alert alert-primary" role="alert">
             <h4 class="alert-heading">Sorry to announce, but...</h4>
             <p>You must login to view comments/ add posts or 'like'</p>
-                <a href="">
-                  Back to posts
+                <a href="/">
+                  Back to main page
                 </a><br>
                 <a href="/accounts/login/" >
                   Log in
