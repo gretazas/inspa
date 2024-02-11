@@ -1,6 +1,6 @@
 ### Top 
 <h1 style="text-align: center;"><strong>Inspa</strong></h1>
-<h2 style="text-align: center;"><strong>Welcome to the README PAGE of the Inspa</strong></h2>
+<h2 style="text-align: center;"><strong>Welcome to the README PAGE of the Inspa webpage</strong></h2>
 
 ### Link to the app:  
 
